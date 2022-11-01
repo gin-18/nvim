@@ -33,7 +33,7 @@ keymap('v', 'K', '5k', opts)
 keymap('v', 'J', '5j', opts)
 keymap('v', 'H', '0', opts)
 keymap('v', 'L', '$', opts)
-keymap('v', '<SPACE>yy', '"+y', opts)
+keymap('v', '<SPACE>yc', '"+y', opts)
 
 -- lsp diagnostic
 keymap('n', '<SPACE>dt', vim.diagnostic.open_float, opts)

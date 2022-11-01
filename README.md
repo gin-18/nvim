@@ -1,27 +1,6 @@
 # neovim 配置
 
-* [neovim 配置](#neovim-配置)
-   * [1. 依赖](#1-依赖)
-      * [Arch Linux 使用 pacman 和 yay 安装依赖](#arch-linux-使用-pacman-和-yay-安装依赖)
-      * [npm 安装 neovim](#npm-安装-neovim)
-      * [pip 安装 pynvim](#pip-安装-pynvim)
-   * [2. 使用本配置](#2-使用本配置)
-   * [3. 快捷键](#3-快捷键)
-   * [4. 基本功能](#4-基本功能)
-      * [插件管理器 - vim-plug](#插件管理器---vim-plug)
-      * [自动补全 - coc](#自动补全---coc)
-      * [模糊搜索 - fzf](#模糊搜索---fzf)
-      * [文件管理器 - rnvimr](#文件管理器---rnvimr)
-      * [代码片段 - coc-snippets](#代码片段---coc-snippets)
-      * [终端 - vim-floaterm](#终端---vim-floaterm)
-   * [5. Markdown 支持](#5-markdown-支持)
-      * [快速输入](#快速输入)
-      * [Markdown 预览](#markdown-预览)
-      * [表格模板](#表格模板)
-      * [从剪贴板插入图片](#从剪贴板插入图片)
-   * [6. 前端支持](#6-前端支持)
-      * [颜色显示](#颜色显示)
-      * [自动刷新页面](#自动刷新页面)
+<img src="https://github.com/GIN-18/readme-image/blob/master/nvim/nvim-start.png?raw=true" alt="nvim-start" />
 
 ## 1. 依赖
 
@@ -34,17 +13,15 @@
 4. python3
 5. pip
 6. nerd-fonts
-7. ctags
-8. fzf
-9. bat
-10. xclip
-11. ripgrep
+7. fzf
+8. xclip
+9. ripgrep
 ```
 
 ### Arch Linux 使用 pacman 和 yay 安装依赖
 
 ```sh
-sudo pacman -S nodejs npm yarn python3 python-pip fzf bat ripgrep xclip ctags
+sudo pacman -S nodejs npm yarn python3 python-pip fzf ripgrep xclip
 
 yay -S nerd-fonts-fira-code
 ```
@@ -71,7 +48,7 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
 
 ## 3. 快捷键
 
-`leader` 键为 `空格键`。
+`space` 键为 `空格键`。
 
 | 快捷键            | 描述                           |
 |-------------------|--------------------------------|
@@ -82,23 +59,19 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
 | `shift` `l`       | 光标移动到行尾                 |
 | `shift` `j`       | 光标向下移动5行                |
 | `shift` `k`       | 光标向上移动5行                |
-| `leader` `s` `l`  | 左右分屏，光标在左分屏         |
-| `leader` `s` `j`  | 上下分屏，光标在下分屏         |
-| `alt` `shift` `h` | 光标移动到左分屏               |
-| `alt` `shift` `j` | 光标移动到下分屏               |
-| `alt` `shift` `k` | 光标移动到上分屏               |
-| `alt` `shift` `l` | 光标移动到右分屏               |
+| `space` `s` `l`   | 左右分屏，光标在左分屏         |
+| `space` `s` `j`   | 上下分屏，光标在下分屏         |
+| `shift` `alt` `h` | 光标移动到左分屏               |
+| `shift` `alt` `j` | 光标移动到下分屏               |
+| `shift` `alt` `k` | 光标移动到上分屏               |
+| `shift` `alt` `l` | 光标移动到右分屏               |
 | `shift` `up`      | 上下分屏时，增加分屏高度       |
 | `shift` `down`    | 上下分屏时，减少分屏高度       |
 | `shift` `left`    | 左右分屏时，增加分屏宽度       |
 | `shift` `right`   | 左右分屏时，减少分屏宽度       |
-| `leader` `n` `t`  | 打开一个新标签                 |
-| `tab` `h`         | 切换到上一个标签               |
-| `tab` `l`         | 切换到下一个标签               |
-| `leader` `y`      | 在可视模式下，复制到系统剪贴板 |
-| `leader` `n` `h`  | 取消搜索结果的高亮             |
-| `leader` `s` `c`  | 打开拼写检查                   |
-| `leader` `e` `v`  | 打开 `$MYVIMRC`                |
+| `space` `y` `c`   | 在可视模式下，复制到系统剪贴板 |
+| `space` `n` `h`   | 取消搜索结果的高亮             |
+| `space` `e` `v`   | 打开 `$MYVIMRC`                |
 
 ## 4. 基本功能
 
@@ -109,25 +82,21 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
 **插件管理器地址**：[junegunn/vim-plug](https://github.com/junegunn/vim-plug)
 
 
-### 自动补全 - coc
+### 自动补全 - nvim-cmp
 
 ---
 
-**插件地址**：[neoclide/coc.nvim](https://github.com/neoclide/coc.nvim)
+**插件地址**：[hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 
 | 快捷键             | 描述                         |
 | ------------------ | ---------------------------- |
-| `leader` `r` `n`   | 重命名变量                   |
-| `leader` `c` `d`   | 跳转到变量或函数定义的地方   |
-| `leader` `c` `r`   | 跳转到变量或函数调用的地方   |
-| `leader` `c` `w`   | 跳转到代码错误的地方         |
-| `leader` `s` `d`   | 打开光标下单词的文档         |
-| `leader` `y` `l`   | 打开剪贴板列表               |
-| `ctrl` `j`         | 向下高亮补全项               |
-| `ctrl` `k`         | 向上高亮补全项               |
+| `ctrl` `n`         | 向下高亮补全项               |
+| `ctrl` `p`         | 向上高亮补全项               |
+| `ctrl` `j`         | 跳到下一个标记处             |
+| `ctrl` `k`         | 跳到上一个标记处             |
 | `enter`            | 选择高亮的补全项             |
 
-在 `plugin/coc.vim` 文件中可以修改配置。
+在 `lua/plugins/config/nvim-cmp.lua` 文件中可以修改配置。
 
 <details>
     <summary><strong>Demo (click to expand)</strong></summary>
@@ -140,18 +109,18 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
 
 **插件地址**：[nvim-telescope/telescope.vim](https://github.com/nvim-telescope/telescope.nvim)
 
-| 快捷键           | 描述                                |
-|------------------|-------------------------------------|
-| `leader` `t` `f` | 查找当前目录下的文件                |
-| `leader` `t` `h` | 查找家目录下的文件                  |
-| `leader` `t` `b` | 查找 `Buffers`                      |
-| `leader` `t` `o` | 查找最近打开过的文件                |
-| `leader` `t` `l` | 查找行                              |
-| `leader` `t` `c` | 查找当前 `Buffer` 下的行            |
-| `ctrl` `j`       | 打开 `telescope` 后，向下移动一格   |
-| `ctrl` `k`       | 打开 `telescope` 后，向上移动一格   |
-| `enter`          | 打开 `telescope` 后，选择高亮的选项 |
-| `esc`            | 退出 `telescope`                    |
+| 快捷键          | 描述                                |
+|-----------------|-------------------------------------|
+| `space` `t` `f` | 查找当前目录下的文件                |
+| `space` `t` `h` | 查找家目录下的文件                  |
+| `space` `t` `b` | 查找 `Buffers`                      |
+| `space` `t` `o` | 查找最近打开过的文件                |
+| `space` `t` `l` | 查找行                              |
+| `space` `t` `c` | 查找当前 `Buffer` 下的行            |
+| `ctrl` `j`      | 打开 `telescope` 后，向下移动一格   |
+| `ctrl` `k`      | 打开 `telescope` 后，向上移动一格   |
+| `enter`         | 打开 `telescope` 后，选择高亮的选项 |
+| `esc`           | 退出 `telescope`                    |
 
 在 `plugin/telescope.vim` 文件中可以修改配置。
 
@@ -168,10 +137,10 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
 
 **插件地址**：[kevinhwang91/rnvimr](https://github.com/kevinhwang91/rnvimr)
 
-| 快捷键           | 描述          |
-|------------------|---------------|
-| `leader` `e` `e` | 打开 `rnvimr` |
-| `q`              | 退出 `rnvimr` |
+| 快捷键          | 描述          |
+|-----------------|---------------|
+| `space` `e` `e` | 打开 `rnvimr` |
+| `q`             | 退出 `rnvimr` |
 
 其他使用和 `ranger` 一样。
 
@@ -218,14 +187,14 @@ endsnippet
 **插件地址**：[voldikss/vim-floaterm](https://github.com/voldikss/vim-floaterm)
 
 
-| 快捷键           | 描述                         |
-|------------------|------------------------------|
-| `leader` `f` `t` | 普通模式下，打开终端         |
-| `leader` `f` `n` | 普通模式下，打开一个新终端   |
-| `leader` `f` `k` | 普通模式下，关闭所有终端     |
-| `alt` `t`        | 终端模式下，隐藏终端         |
-| `alt` `p`        | 终端模式下，切换到上一个终端 |
-| `alt` `n`        | 终端模式下，切换到下一个终端 |
+| 快捷键          | 描述                         |
+|-----------------|------------------------------|
+| `space` `f` `t` | 普通模式下，打开终端         |
+| `space` `f` `n` | 普通模式下，打开一个新终端   |
+| `space` `f` `k` | 普通模式下，关闭所有终端     |
+| `alt` `t`       | 终端模式下，隐藏终端         |
+| `alt` `p`       | 终端模式下，切换到上一个终端 |
+| `alt` `n`       | 终端模式下，切换到下一个终端 |
 
 <details>
     <summary><strong>Demo (click to expand)</strong></summary>
@@ -259,11 +228,11 @@ endsnippet
 | `boldAndItalic` | 输入粗斜体文本 |
 | `deleteLine`    | 输入删除线     |
 
-在 `UltiSnips/markdown.snippets` 文件中可以修改配置。
+在 `my-snippets/snippets/markdown.json` 文件中可以修改配置。
 
 <details>
     <summary><strong>Demo (click to expand)</strong></summary>
-    <img src="./images/md-quick-input.gif" alt="md-quick-input" />
+    <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/md-quick-input.gif?raw=true" alt="md-quick-input" />
 </details>
 
 ### Markdown 预览
@@ -278,11 +247,11 @@ endsnippet
 
 配置中使用 `microsoft-edge-beta` 浏览器作为预览工具。
 
-在 `plugin/markdown-preview.vim` 文件中可以修改配置。
+在 `init.vim` 文件中可以找到关于 `markdown-preview` 的配置并修改。
 
 <details>
     <summary><strong>Demo (click to expand)</strong></summary>
-    <img src="./images/markdown-preview.gif" alt="markdown-preview" />
+    <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/markdown-preview.gif?raw=true" alt="markdown-preview" />
 </details>
 
 ### 表格模板
@@ -296,11 +265,11 @@ endsnippet
 | `alt` `shift` `t` | 启动表格模板     |
 | `alt` `shift` `r` | 表格模板重新对齐 |
 
-在 `plugin/table-mode.vim` 文件中可以修改配置。
+在 `init.vim` 文件中可以找到关于 `table-mode` 的配置并修改。
 
 <details>
     <summary><strong>Demo (click to expand)</strong></summary>
-    <img src="./images/table-mode.gif" alt="table-mode" />
+    <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/table-mode.gif?raw=true" alt="table-mode" />
 </details>
 
 ### 从剪贴板插入图片
@@ -309,45 +278,13 @@ endsnippet
 
 **插件地址**：[ferrine/md-img-paste.vim](https://github.com/ferrine/md-img-paste.vim)
 
-| 快捷键           | 描述           |
-|------------------|----------------|
-| `leader` `p` `i` | 输入图片的名称 |
+| 快捷键          | 描述           |
+|-----------------|----------------|
+| `space` `p` `i` | 输入图片的名称 |
 
-在 `plugin/md-img-paste.vim` 文件中可以修改配置。
-
-<details>
-    <summary><strong>Demo (click to expand)</strong></summary>
-    <img src="./images/md-img-paste.gif" alt="md-img-paste" />
-</details>
-
-## 6. 前端支持
-
-### 颜色显示
-
----
-
-**插件地址**：[neoclide/coc-highlight](https://github.com/neoclide/coc-highlight)
-
-在 `vim` 中显示颜色。
+在 `init.vim` 文件中可以找到关于 `md-img-paste` 的配置并修改。
 
 <details>
     <summary><strong>Demo (click to expand)</strong></summary>
-    <img src="./images/coc-highlight.png" alt="coc-highlight" />
-</details>
-
-### 自动刷新页面
-
----
-
-**插件地址**：[turbio/bracey.vim](https://github.com/turbio/bracey.vim)
-
-| 快捷键      | 描述       |
-|-------------|------------|
-| `shift` `r` | 启动bracey |
-
-在 `plugin/bracey.vim` 文件中可以修改配置。
-
-<details>
-    <summary><strong>Demo (click to expand)</strong></summary>
-    <img src="./images/bracey.gif" alt="bracey" />
+    <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/md-img-paste.gif?raw=true" alt="md-img-paste" />
 </details>
