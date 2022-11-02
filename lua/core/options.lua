@@ -9,7 +9,7 @@ opt.encoding = 'utf-8'
 
 opt.autoindent = true
 opt.smartindent = true
-opt.wrap = true
+opt.wrap = false
 opt.number = true
 opt.relativenumber = true
 opt.wildmenu = true

@@ -48,8 +48,6 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
 
 ## 3. 快捷键
 
-`space` 键为 `空格键`。
-
 | 快捷键            | 描述                           |
 |-------------------|--------------------------------|
 | `s`               | 保存                           |
@@ -73,16 +71,47 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
 | `space` `n` `h`   | 取消搜索结果的高亮             |
 | `space` `e` `v`   | 打开 `$MYVIMRC`                |
 
+在 `lua/core/keymaps.lua` 文件中可以修改快捷键的配置。
+
 ## 4. 基本功能
 
-### 插件管理器 - vim-plug
+### :necktie: 插件管理器 - vim-plug
 
 ---
 
 **插件管理器地址**：[junegunn/vim-plug](https://github.com/junegunn/vim-plug)
 
+如果在国内插件下载得太慢，可以在配置文件中添加以下代码，以从镜像网站下载插件。
 
-### 自动补全 - nvim-cmp
+```vimscript
+let g:plug_url_format='https://ghproxy.com/https://github.com/%s'
+```
+
+### :wrench: lsp 支持 - nvim-lspconfig
+
+---
+
+**插件地址**：[neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+
+| 快捷键          | 描述                     |
+|-----------------|--------------------------|
+| `space` `g` `d` | 跳转到变量或者函数定义处 |
+| `space` `g` `r` | 跳转到变量或者函数引用处 |
+| `space` `r` `n` | 变量或者函数重命名       |
+| `space` `c` `f` | 代码格式化               |
+| `space` `c` `a` | 列出 `code action`       |
+| `space` `d` `t` | 预览 `diagnostic`        |
+| `space` `d` `n` | 下一处 `diagnostic`      |
+| `space` `d` `p` | 上一处 `diagnostic`      |
+
+在 `lua/plugins/config/nvim-lspconfig.lua` 文件中可以修改配置。
+
+<details>
+  <summary><strong>Demo (click to expand)</strong></summary>
+  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/nvim-lspconfig-diagnostic.png?raw=true" alt="nvim-lspconfig-diagnostic" />
+</details>
+
+### :computer: 自动补全 - nvim-cmp
 
 ---
 
@@ -92,95 +121,121 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
 | ------------------ | ---------------------------- |
 | `ctrl` `n`         | 向下高亮补全项               |
 | `ctrl` `p`         | 向上高亮补全项               |
-| `ctrl` `j`         | 跳到下一个标记处             |
-| `ctrl` `k`         | 跳到上一个标记处             |
+| `ctrl` `j`         | 代码片段跳到下一个标记处     |
+| `ctrl` `k`         | 代码片段跳到上一个标记处     |
 | `enter`            | 选择高亮的补全项             |
 
 在 `lua/plugins/config/nvim-cmp.lua` 文件中可以修改配置。
 
 <details>
-    <summary><strong>Demo (click to expand)</strong></summary>
-    <img src="./images/coc.gif" alt="coc" />
+  <summary><strong>Demo (click to expand)</strong></summary>
+  <span>内容补全</span>
+  <br />
+  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/nvim-cmp.png?raw=true" alt="nvim-cmp" />
+  <br />
+  <span>命令行补全</span>
+  <br />
+  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/nvim-cmdline.png?raw=true" alt="nvim-cmdline" />
+  <br />
+  <span>[ "/", "?" ] 查找补全</span>
+  <br />
+  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/nvim-search.png?raw=true" alt="nvim-search" />
 </details>
 
-### 模糊搜索 - telescope
+### :books: 代码片段 - luasnip
+
+---
+
+**插件地址**：[L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip)
+
+在 `my-snippets/snippets` 目录下可以添加自定义的代码片段。
+
+添加完成需要在 `my-snippets/package.json` 文件中引入自定义的代码片段。
+
+<details>
+  <summary><strong>Demo (click to expand)</strong></summary>
+  <span>代码片段的写法和 <code>vscode</code> 的代码片段的写法一样。</span>
+  <br />
+  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/luasnip.png?raw=true" alt="luasnip" />
+</details>
+
+### :telescope: 模糊搜索 - telescope
 
 ---
 
 **插件地址**：[nvim-telescope/telescope.vim](https://github.com/nvim-telescope/telescope.nvim)
 
-| 快捷键          | 描述                                |
-|-----------------|-------------------------------------|
-| `space` `t` `f` | 查找当前目录下的文件                |
-| `space` `t` `h` | 查找家目录下的文件                  |
-| `space` `t` `b` | 查找 `Buffers`                      |
-| `space` `t` `o` | 查找最近打开过的文件                |
-| `space` `t` `l` | 查找行                              |
-| `space` `t` `c` | 查找当前 `Buffer` 下的行            |
-| `ctrl` `j`      | 打开 `telescope` 后，向下移动一格   |
-| `ctrl` `k`      | 打开 `telescope` 后，向上移动一格   |
-| `enter`         | 打开 `telescope` 后，选择高亮的选项 |
-| `esc`           | 退出 `telescope`                    |
+| 快捷键          | 描述                                    |
+|-----------------|-----------------------------------------|
+| `space` `f` `f` | 查找当前目录下的文件                    |
+| `space` `f` `h` | 查找家目录下的文件                      |
+| `space` `f` `g` | 查找 `git` 管理的文件                   |
+| `space` `f` `o` | 查找最近打开过的文件                    |
+| `space` `f` `b` | 查找 `Buffers`                          |
+| `space` `f` `l` | 查找行                                  |
+| `space` `f` `y` | 查找剪贴板历史                          |
+| `space` `f` `p` | 查找项目                                |
+| `ctrl` `n`      | 打开 `telescope` 后，向下移动一格       |
+| `ctrl` `p`      | 打开 `telescope` 后，向上移动一格       |
+| `ctrl` `j`      | 打开 `telescope` 后，下一条搜索过的内容 |
+| `ctrl` `k`      | 打开 `telescope` 后，上一条搜索过的内容 |
+| `enter`         | 打开 `telescope` 后，选择高亮的选项     |
+| `esc`           | 退出 `telescope`                        |
 
-在 `plugin/telescope.vim` 文件中可以修改配置。
+在 `lua/plugins/config/telescope.lua` 文件中可以修改配置。
 
 <details>
-    <summary><strong>Demo (click to expand)</strong></summary>
-    <img src="./images/telescope.gif" alt="telescope" />
+  <summary><strong>Demo (click to expand)</strong></summary>
+  <span>查找剪贴板历史，需要 <a href="https://github.com/gbprod/yanky.nvim">gbprod/yanky.nvim</a> 插件的支持。</span>
+  <br />
+  <span>在 <code>lua/plugins/config/yanky.lua</code> 文件中可以修改此插件的配置。</span>
+  <br />
+  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/telescope-yanky.png?raw=true" alt="telescope-yanky" />
+  <br />
+  <span>查找项目，需要 <a href="https://github.com/ahmedkhalf/project.nvim">ahmedkhalf/project.nvim</a> 插件的支持。</span>
+  <br />
+  <span>在 <code>lua/plugins/config/project.lua</code> 文件中可以修改此插件的配置。</sapn>
+  <br />
+  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/telescope-project.png?raw=true" alt="telescope-project" />
 </details>
 
-### 文件管理器 - rnvimr
+### :file_folder: 文件管理器 - nvim-tree
 
 ---
 
-**依赖**：[ranger/ranger](https://github.com/ranger/ranger)
+**插件地址**：[nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
 
-**插件地址**：[kevinhwang91/rnvimr](https://github.com/kevinhwang91/rnvimr)
+| 快捷键          | 描述             |
+|-----------------|------------------|
+| `space` `e` `e` | 打开 `nvim-tree` |
+| `q`             | 退出 `nvim-tree` |
 
-| 快捷键          | 描述          |
-|-----------------|---------------|
-| `space` `e` `e` | 打开 `rnvimr` |
-| `q`             | 退出 `rnvimr` |
-
-其他使用和 `ranger` 一样。
-
-在 `plugin/rnvimr.vim` 文件中可以修改配置。
+在 `lua/plugins/config/nvim-tree.lua` 文件中可以修改配置。
 
 <details>
-    <summary><strong>Demo (click to expand)</strong></summary>
-    <img src="./images/rnvimr.gif" alt="rnvimr" />
+  <summary><strong>Demo (click to expand)</strong></summary>
+  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/nvim-tree.png?raw=true" alt="nvim-tree" />
 </details>
 
-### 代码片段 - coc-snippets
+### :bookmark_tabs: 目录大纲 - symbols-outline
 
 ---
 
-**插件地址**：[neoclide/coc-sinppets](https://github.com/neoclide/coc-snippets)
+**插件地址**：[simrat39/symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)
 
-在 `UltiSnips` 目录下可以添加自定义的代码片段。
+| 快捷键          | 描述                   |
+|-----------------|------------------------|
+| `space` `s` `t` | 打开 `symbols-outline` |
+| `q`             | 退出 `symbols-outline` |
 
-例：
-
-添加一个 `shell` 脚本的开头的代码片段：`sh.sinppets`。
-
-```sh
-snippet sh "shell heading" b
-#!/bin/bash
-
-# Author: ${1:gin}
-# CreateDate: <++>
-# Description: <++>
-
-<++>
-endsnippet
-```
+在 `lua/plugins/config/symbols-outline.lua` 文件中可以修改配置。
 
 <details>
-    <summary><strong>Demo (click to expand)</strong></summary>
-    <img src="./images/snippet.gif" alt="snippet" />
+  <summary><strong>Demo (click to expand)</strong></summary>
+  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/symbols-outline.png?raw=true" alt="symbols-outline" />
 </details>
 
-### 终端 - vim-floaterm
+### :pager: 终端 - vim-floaterm
 
 ---
 
@@ -189,53 +244,93 @@ endsnippet
 
 | 快捷键          | 描述                         |
 |-----------------|------------------------------|
-| `space` `f` `t` | 普通模式下，打开终端         |
-| `space` `f` `n` | 普通模式下，打开一个新终端   |
-| `space` `f` `k` | 普通模式下，关闭所有终端     |
+| `space` `t` `t` | 普通模式下，打开终端         |
+| `space` `t` `n` | 普通模式下，打开一个新终端   |
+| `space` `t` `k` | 普通模式下，关闭所有终端     |
 | `alt` `t`       | 终端模式下，隐藏终端         |
-| `alt` `p`       | 终端模式下，切换到上一个终端 |
 | `alt` `n`       | 终端模式下，切换到下一个终端 |
+| `alt` `p`       | 终端模式下，切换到上一个终端 |
 
 <details>
-    <summary><strong>Demo (click to expand)</strong></summary>
-    <img src="./images/floaterm.gif" alt="floaterm" />
+  <summary><strong>Demo (click to expand)</strong></summary>
+  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/vim-floaterm.png?raw=true" alt="vim-floaterm" />
 </details>
 
-## 5. Markdown 支持
+## 5. git 支持
 
-### 快速输入
+### :pushpin: 显示 git 标记 - gitsigns
+
+---
+
+**插件地址**：[lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
+
+| 快捷键          | 描述              |
+|-----------------|-------------------|
+| `space` `h` `r` | 重置 `hunk`       |
+| `space` `h` `n` | 下一处 `hunk`     |
+| `space` `h` `p` | 上一处 `hunk`     |
+| `space` `h` `l` | 预览 `hunk`       |
+
+在 `lua/plugins/config/gitsigns.lua` 文件中可以修改配置。
+
+<details>
+  <summary><strong>Demo (click to expand)</strong></summary>
+  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/gitsigns.png?raw=true" alt="gitsigns" />
+</details>
+
+### :koala: git 操作 - lazygit
+
+---
+
+**插件地址**：[kdheepak/lazygit.nvim](https://github.com/kdheepak/lazygit.nvim)
+
+| 快捷键          | 描述           |
+|-----------------|----------------|
+| `space` `g` `g` | 打开 `lazygit` |
+| `q`             | 退出 `lazygit` |
+
+在 `lua/plugins/config/lazygit.lua` 文件中可以修改配置。
+
+<details>
+  <summary><strong>Demo (click to expand)</strong></summary>
+  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/lazygit.png?raw=true" alt="lazygit" />
+</details>
+
+## 6. Markdown 支持
+
+### :pencil: 快速输入
 
 ---
 
 在 `插入模式(insert-mode)` 下，`markdown` 文件中输入：
 
-| 快捷键          | 描述           |
-|-----------------|----------------|
-| `h1`            | 输入一级标题   |
-| `h2`            | 输入二级标题   |
-| `h3`            | 输入三级标题   |
-| `h4`            | 输入四级标题   |
-| `h5`            | 输入五级标题   |
-| `h6`            | 输入六级标题   |
-| `image`         | 插入图片       |
-| `block`         | 插入代码块     |
-| `mark`          | 使用反引号包裹 |
-| `table`         | 插入表格       |
-| `link`          | 插入链接       |
-| `line`          | 插入分隔线     |
-| `bold`          | 输入粗体文本   |
-| `italic`        | 输入斜体文本   |
-| `boldAndItalic` | 输入粗斜体文本 |
-| `deleteLine`    | 输入删除线     |
+| 快捷键            | 描述           |
+|-------------------|----------------|
+| `h1`              | 输入一级标题   |
+| `h2`              | 输入二级标题   |
+| `h3`              | 输入三级标题   |
+| `h4`              | 输入四级标题   |
+| `h5`              | 输入五级标题   |
+| `h6`              | 输入六级标题   |
+| `img`             | 插入图片       |
+| `codeblock`       | 插入代码块     |
+| `code`            | 使用反引号包裹 |
+| `table`           | 插入表格       |
+| `link`            | 插入链接       |
+| `horizontal rule` | 插入分隔线     |
+| `bold`            | 输入粗体文本   |
+| `italic`          | 输入斜体文本   |
+| `bold and italic` | 输入粗斜体文本 |
+| `strikethrough`   | 输入删除线     |
 
 在 `my-snippets/snippets/markdown.json` 文件中可以修改配置。
 
 <details>
-    <summary><strong>Demo (click to expand)</strong></summary>
-    <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/md-quick-input.gif?raw=true" alt="md-quick-input" />
+  <summary><strong>Demo (click to expand)</strong></summary>
+  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/md-quick-input.gif?raw=true" alt="md-quick-input" />
 </details>
 
-### Markdown 预览
+### :eyes: Markdown 预览 - markdown-preview
 
 ---
 
@@ -250,11 +345,11 @@ endsnippet
 在 `init.vim` 文件中可以找到关于 `markdown-preview` 的配置并修改。
 
 <details>
-    <summary><strong>Demo (click to expand)</strong></summary>
-    <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/markdown-preview.gif?raw=true" alt="markdown-preview" />
+  <summary><strong>Demo (click to expand)</strong></summary>
+  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/markdown-preview.gif?raw=true" alt="markdown-preview" />
 </details>
 
-### 表格模板
+### :straight_ruler: 表格模板 - vim-table-mode
 
 ---
 
@@ -268,11 +363,11 @@ endsnippet
 在 `init.vim` 文件中可以找到关于 `table-mode` 的配置并修改。
 
 <details>
-    <summary><strong>Demo (click to expand)</strong></summary>
-    <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/table-mode.gif?raw=true" alt="table-mode" />
+  <summary><strong>Demo (click to expand)</strong></summary>
+  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/table-mode.gif?raw=true" alt="table-mode" />
 </details>
 
-### 从剪贴板插入图片
+### :clipboard: 从剪贴板插入图片 - md-img-paste
 
 ---
 
@@ -285,6 +380,6 @@ endsnippet
 在 `init.vim` 文件中可以找到关于 `md-img-paste` 的配置并修改。
 
 <details>
-    <summary><strong>Demo (click to expand)</strong></summary>
-    <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/md-img-paste.gif?raw=true" alt="md-img-paste" />
+  <summary><strong>Demo (click to expand)</strong></summary>
+  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/md-img-paste.gif?raw=true" alt="md-img-paste" />
 </details>

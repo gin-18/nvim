@@ -42,15 +42,15 @@ keymap('n', '<SPACE>dn', vim.diagnostic.goto_next, opts)
 keymap('n', '<SPACE>dl', vim.diagnostic.setloclist, opts)
 
 -- telescope
-keymap('n', '<SPACE>tf', '<Cmd>Telescope find_files<CR>', opts)
-keymap('n', '<SPACE>th', '<Cmd>Telescope find_files search_dirs=~<CR>', opts)
-keymap('n', '<SPACE>tg', '<Cmd>Telescope git_files<CR>', opts)
-keymap('n', '<SPACE>to', '<Cmd>Telescope oldfiles<CR>', opts)
-keymap('n', '<SPACE>tb', '<Cmd>Telescope buffers<CR>', opts)
-keymap('n', '<SPACE>tl', '<Cmd>Telescope live_grep<CR>', opts)
-keymap('n', '<SPACE>ty', '<Cmd>Telescope yank_history<CR>', opts)
-keymap('n', '<SPACE>td', '<Cmd>Telescope diagnostics<CR>', opts)
-keymap('n', '<SPACE>tp', '<Cmd>Telescope projects<CR>', opts)
+keymap('n', '<SPACE>ff', '<Cmd>Telescope find_files<CR>', opts)
+keymap('n', '<SPACE>fh', '<Cmd>Telescope find_files search_dirs=~<CR>', opts)
+keymap('n', '<SPACE>fg', '<Cmd>Telescope git_files<CR>', opts)
+keymap('n', '<SPACE>fo', '<Cmd>Telescope oldfiles<CR>', opts)
+keymap('n', '<SPACE>fb', '<Cmd>Telescope buffers<CR>', opts)
+keymap('n', '<SPACE>fl', '<Cmd>Telescope live_grep<CR>', opts)
+keymap('n', '<SPACE>fy', '<Cmd>Telescope yank_history<CR>', opts)
+keymap('n', '<SPACE>fd', '<Cmd>Telescope diagnostics<CR>', opts)
+keymap('n', '<SPACE>fp', '<Cmd>Telescope projects<CR>', opts)
 
 -- nvim-tree
 keymap('n', '<SPACE>ee', '<Cmd>NvimTreeToggle<CR>', opts)
@@ -58,16 +58,19 @@ keymap('n', '<SPACE>ee', '<Cmd>NvimTreeToggle<CR>', opts)
 -- lazygit
 keymap('n', '<SPACE>gg', '<Cmd>LazyGit<CR>', opts)
 
--- gitsigns
-keymap('n', '<SPACE>gp', '<Cmd>Gitsigns preview_hunk<CR>', opts)
+-- gitsigns - hunk
+keymap('n', '<SPACE>hl', '<Cmd>Gitsigns preview_hunk<CR>', opts)
+keymap('n', '<SPACE>hn', '<Cmd>Gitsigns next_hunk<CR>', opts)
+keymap('n', '<SPACE>hp', '<Cmd>Gitsigns prev_hunk<CR>', opts)
+keymap('n', '<SPACE>hr', '<Cmd>Gitsigns reset_hunk<CR>', opts)
 
 -- symbols-outine
 keymap('n', '<SPACE>st', '<Cmd>SymbolsOutline<CR>', opts)
 
 -- floaterm
-keymap('n', '<SPACE>ft', '<Cmd>FloatermToggle<CR>', opts)
-keymap('n', '<SPACE>fn', '<Cmd>FloatermNew<CR>', opts)
-keymap('n', '<SPACE>fk', '<Cmd>FloatermKill!<CR>', opts)
+keymap('n', '<SPACE>tt', '<Cmd>FloatermToggle<CR>', opts)
+keymap('n', '<SPACE>tn', '<Cmd>FloatermNew<CR>', opts)
+keymap('n', '<SPACE>tk', '<Cmd>FloatermKill!<CR>', opts)
 keymap('t', '<M-t>', '<C-\\><C-n><Cmd>FloatermToggle<CR>', opts)
 keymap('t', '<M-n>', '<C-\\><C-n><Cmd>FloatermNext<CR>', opts)
 keymap('t', '<M-p>', '<C-\\><C-n><Cmd>FloatermPrev<CR>', opts)

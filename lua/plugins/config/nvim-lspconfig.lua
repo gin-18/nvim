@@ -29,8 +29,6 @@ end
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 local on_attach = function(client, bufnr)
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
-  -- vim.keymap.set('n', '<SPACE>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-  -- vim.keymap.set('n', '<SPACE>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
   vim.keymap.set('n', '<SPACE>gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', '<SPACE>gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<SPACE>rn', vim.lsp.buf.rename, bufopts)
