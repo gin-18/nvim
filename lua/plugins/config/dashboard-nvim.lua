@@ -6,8 +6,6 @@ end
 
 dashboard.custom_header = {
   '',
-  '',
-  '',
   '████████████▛▟█████████████████████▛████▛▟████████████████████████████████████████████████████████▎████▜',
   '███████████▛▟██████████████████▀▜▅▇████▛▟█████████████████████████████████████████████████████████▏███▙█',
   '███████████▐█████████████████▜▅████████▐██████████████████████████████████████████████████████████▐█████',
@@ -49,8 +47,9 @@ dashboard.custom_header = {
 dashboard.custom_center = {
   { icon = ' ', desc = 'New Files                                ', shortcut = 'n', action = 'DashboardNewFile' },
   { icon = ' ', desc = 'Search Project                           ', shortcut = 'p', action = 'Telescope projects' },
+  { icon = ' ', desc = 'NvimTree Explorer                        ', shortcut = 'e', action = 'PlugUpdate' },
   { icon = 'ﮮ ', desc = 'Update Plugins                           ', shortcut = 'u', action = 'PlugUpdate' },
-  { icon = 'ﯯ ', desc = 'Setting                                  ', shortcut = 'e', action = 'edit $MYVIMRC' },
+  { icon = 'ﯯ ', desc = 'Setting                                  ', shortcut = 's', action = 'edit $MYVIMRC' },
   { icon = ' ', desc = 'Exit                                     ', shortcut = 'q', action = 'exit' },
 }
 dashboard.custom_footer = { 'gin-neovim' }
@@ -65,8 +64,9 @@ vim.api.nvim_create_autocmd('Filetype', {
       setlocal nonumber norelativenumber nocursorline noruler
       nnoremap <buffer> n <Cmd>DashboardNewFile<CR>
       nnoremap <buffer> p <Cmd>Telescope projects<CR>
+      nnoremap <buffer> e <Cmd>NvimTreeToggle<CR>
       nnoremap <buffer> u <Cmd>PlugUpdate<CR>
-      nnoremap <buffer> e <Cmd>edit $MYVIMRC<CR>
+      nnoremap <buffer> s <Cmd>edit $MYVIMRC<CR>
       nnoremap <buffer> q <Cmd>exit<CR>
     ]]
   end

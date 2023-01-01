@@ -38,7 +38,7 @@ let g:plug_url_format='https://ghproxy.com/https://github.com/%s'
 
 call plug#begin('$HOME/.config/nvim/plugged')
 " colorscheme
-" Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'andersevenrud/nordic.nvim'
 Plug 'projekt0n/github-nvim-theme'
@@ -82,6 +82,7 @@ Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle', 'for': ['markdown'
 Plug 'ferrine/md-img-paste.vim', { 'for': ['markdown', 'vim-plug'] }
 
 " utils
+Plug 'folke/todo-comments.nvim'
 Plug 'ahmedkhalf/project.nvim'
 Plug 'simrat39/symbols-outline.nvim'
 Plug 'jose-elias-alvarez/null-ls.nvim'
@@ -192,6 +193,7 @@ require('plugins.config.lazygit')
 require('plugins.config.gitsigns')
 
 -- utils
+require('plugins.config.todo-comments')
 require('plugins.config.symbols-outline')
 require('plugins.config.project')
 require('plugins.config.yanky')

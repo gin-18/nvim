@@ -51,4 +51,4 @@ opt.listchars = {
 -- opt.backupdir = '~/.config/nvim/tmp'
 
 -- undofile
-opt.undofile = true
+opt.undofile = false
