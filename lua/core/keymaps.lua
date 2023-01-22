@@ -48,9 +48,9 @@ keymap('n', '<SPACE>fg', '<Cmd>Telescope git_files<CR>', opts)
 keymap('n', '<SPACE>fo', '<Cmd>Telescope oldfiles<CR>', opts)
 keymap('n', '<SPACE>fb', '<Cmd>Telescope buffers<CR>', opts)
 keymap('n', '<SPACE>fl', '<Cmd>Telescope live_grep<CR>', opts)
-keymap('n', '<SPACE>fy', '<Cmd>Telescope yank_history<CR>', opts)
 keymap('n', '<SPACE>fd', '<Cmd>Telescope diagnostics<CR>', opts)
 keymap('n', '<SPACE>fp', '<Cmd>Telescope projects<CR>', opts)
+keymap('n', '<SPACE>ft', '<Cmd>TodoTelescope<CR>', opts)
 
 -- nvim-tree
 keymap('n', '<SPACE>ee', '<Cmd>NvimTreeToggle<CR>', opts)

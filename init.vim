@@ -82,13 +82,13 @@ Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle', 'for': ['markdown'
 Plug 'ferrine/md-img-paste.vim', { 'for': ['markdown', 'vim-plug'] }
 
 " utils
+" Plug 'gbprod/yanky.nvim'
 Plug 'folke/todo-comments.nvim'
 Plug 'ahmedkhalf/project.nvim'
 Plug 'simrat39/symbols-outline.nvim'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'voldikss/vim-translator'
 Plug 'glepnir/dashboard-nvim'
-Plug 'gbprod/yanky.nvim'
 Plug 'tpope/vim-surround'
 Plug 'lukas-reineke/indent-blankline.nvim'  " indent line
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
@@ -196,7 +196,6 @@ require('plugins.config.gitsigns')
 require('plugins.config.todo-comments')
 require('plugins.config.symbols-outline')
 require('plugins.config.project')
-require('plugins.config.yanky')
 require('plugins.config.comment')
 require('plugins.config.nvim-autopairs')
 require('plugins.config.nvim-colorizer')
