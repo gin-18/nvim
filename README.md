@@ -175,6 +175,7 @@ let g:plug_url_format='https://ghproxy.com/https://github.com/%s'
 | `space` `f` `l` | 查找行                                  |
 | `space` `f` `y` | 查找剪贴板历史                          |
 | `space` `f` `p` | 查找项目                                |
+| `space` `f` `t` | 查找 `todo comments`                    |
 | `ctrl` `n`      | 打开 `telescope` 后，向下移动一格       |
 | `ctrl` `p`      | 打开 `telescope` 后，向上移动一格       |
 | `ctrl` `j`      | 打开 `telescope` 后，下一条搜索过的内容 |
