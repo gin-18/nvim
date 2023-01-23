@@ -81,8 +81,11 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install', 'for': ['
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle', 'for': ['markdown', 'vim-plug'] }
 Plug 'ferrine/md-img-paste.vim', { 'for': ['markdown', 'vim-plug'] }
 
+" front end
+Plug 'windwp/nvim-ts-autotag'
+Plug 'norcalli/nvim-colorizer.lua'
+
 " utils
-" Plug 'gbprod/yanky.nvim'
 Plug 'folke/todo-comments.nvim'
 Plug 'ahmedkhalf/project.nvim'
 Plug 'simrat39/symbols-outline.nvim'
@@ -93,7 +96,6 @@ Plug 'tpope/vim-surround'
 Plug 'lukas-reineke/indent-blankline.nvim'  " indent line
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'yaocccc/nvim-hlchunk'
-Plug 'norcalli/nvim-colorizer.lua'
 Plug 'windwp/nvim-autopairs'
 Plug 'voldikss/vim-floaterm', { 'on': 'FloatermToggle' }  " terminal
 Plug 'numToStr/Comment.nvim' " comment
@@ -192,11 +194,14 @@ require('plugins.config.nvim-tree')
 require('plugins.config.lazygit')
 require('plugins.config.gitsigns')
 
+-- front end
+require('plugins.config.nvim-ts-autotag')
+require('plugins.config.nvim-colorizer')
+
 -- utils
-require('plugins.config.todo-comments')
-require('plugins.config.symbols-outline')
 require('plugins.config.project')
 require('plugins.config.comment')
+require('plugins.config.todo-comments')
 require('plugins.config.nvim-autopairs')
-require('plugins.config.nvim-colorizer')
+require('plugins.config.symbols-outline')
 EOF
