@@ -86,19 +86,18 @@ Plug 'windwp/nvim-ts-autotag'
 Plug 'norcalli/nvim-colorizer.lua'
 
 " utils
-Plug 'folke/todo-comments.nvim'
-Plug 'ahmedkhalf/project.nvim'
-Plug 'simrat39/symbols-outline.nvim'
-Plug 'jose-elias-alvarez/null-ls.nvim'
-Plug 'voldikss/vim-translator'
-Plug 'glepnir/dashboard-nvim'
-Plug 'tpope/vim-surround'
-Plug 'lukas-reineke/indent-blankline.nvim'  " indent line
-Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-Plug 'yaocccc/nvim-hlchunk'
-Plug 'windwp/nvim-autopairs'
-Plug 'voldikss/vim-floaterm', { 'on': 'FloatermToggle' }  " terminal
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' } " code highlight
 Plug 'numToStr/Comment.nvim' " comment
+Plug 'folke/todo-comments.nvim'
+Plug 'jose-elias-alvarez/null-ls.nvim' " use for code format
+Plug 'ahmedkhalf/project.nvim' " use for telescope search project
+Plug 'voldikss/vim-translator'
+Plug 'voldikss/vim-floaterm', { 'on': 'FloatermToggle' }  " terminal
+Plug 'lukas-reineke/indent-blankline.nvim'  " indent line
+Plug 'yaocccc/nvim-hlchunk'
+Plug 'tpope/vim-surround'
+Plug 'windwp/nvim-autopairs'
+Plug 'glepnir/dashboard-nvim'
 call plug#end()
 
 " -----------------------------------------------------------------
@@ -169,39 +168,38 @@ require('core.disabled')
 
 -- ui
 require('core.colorscheme')
-require('plugins.config.nvim-treesitter')
-require('plugins.config.lualine')
-require('plugins.config.indent-blankline')
-require('plugins.config.dashboard-nvim')
+require('plugins.nvim-treesitter')
+require('plugins.lualine')
+require('plugins.indent-blankline')
+require('plugins.dashboard-nvim')
 
 -- lsp
-require('plugins.config.nvim-lspconfig')
-require('plugins.config.mason')
-require('plugins.config.mason-lspconfig')
-require('plugins.config.null-ls')
+require('plugins.nvim-lspconfig')
+require('plugins.mason')
+require('plugins.mason-lspconfig')
+require('plugins.null-ls')
 
 -- complement
-require('plugins.config.nvim-cmp')
-require('plugins.config.luasnip')
+require('plugins.nvim-cmp')
+require('plugins.luasnip')
 
 -- files finder
-require('plugins.config.telescope')
+require('plugins.telescope')
 
 -- explorer
-require('plugins.config.nvim-tree')
+require('plugins.nvim-tree')
 
 -- git
-require('plugins.config.lazygit')
-require('plugins.config.gitsigns')
+require('plugins.lazygit')
+require('plugins.gitsigns')
 
 -- front end
-require('plugins.config.nvim-ts-autotag')
-require('plugins.config.nvim-colorizer')
+require('plugins.nvim-ts-autotag')
+require('plugins.nvim-colorizer')
 
 -- utils
-require('plugins.config.project')
-require('plugins.config.comment')
-require('plugins.config.todo-comments')
-require('plugins.config.nvim-autopairs')
-require('plugins.config.symbols-outline')
+require('plugins.project')
+require('plugins.comment')
+require('plugins.todo-comments')
+require('plugins.nvim-autopairs')
 EOF

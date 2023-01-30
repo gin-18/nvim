@@ -104,7 +104,7 @@ let g:plug_url_format='https://ghproxy.com/https://github.com/%s'
 | `space` `d` `n` | 下一处 `diagnostic`      |
 | `space` `d` `p` | 上一处 `diagnostic`      |
 
-在 `lua/plugins/config/nvim-lspconfig.lua` 文件中可以修改配置。
+在 `lua/plugins/nvim-lspconfig.lua` 文件中可以修改配置。
 
 <details>
   <summary><strong>Demo (click to expand)</strong></summary>
@@ -125,7 +125,7 @@ let g:plug_url_format='https://ghproxy.com/https://github.com/%s'
 | `ctrl` `k`         | 代码片段跳到上一个标记处     |
 | `enter`            | 选择高亮的补全项             |
 
-在 `lua/plugins/config/nvim-cmp.lua` 文件中可以修改配置。
+在 `lua/plugins/nvim-cmp.lua` 文件中可以修改配置。
 
 <details>
   <summary><strong>Demo (click to expand)</strong></summary>
@@ -173,7 +173,6 @@ let g:plug_url_format='https://ghproxy.com/https://github.com/%s'
 | `space` `f` `o` | 查找最近打开过的文件                    |
 | `space` `f` `b` | 查找 `Buffers`                          |
 | `space` `f` `l` | 查找行                                  |
-| `space` `f` `y` | 查找剪贴板历史                          |
 | `space` `f` `p` | 查找项目                                |
 | `space` `f` `t` | 查找 `todo comments`                    |
 | `ctrl` `n`      | 打开 `telescope` 后，向下移动一格       |
@@ -183,19 +182,13 @@ let g:plug_url_format='https://ghproxy.com/https://github.com/%s'
 | `enter`         | 打开 `telescope` 后，选择高亮的选项     |
 | `esc`           | 退出 `telescope`                        |
 
-在 `lua/plugins/config/telescope.lua` 文件中可以修改配置。
+在 `lua/plugins/telescope.lua` 文件中可以修改配置。
 
 <details>
   <summary><strong>Demo (click to expand)</strong></summary>
-  <span>查找剪贴板历史，需要 <a href="https://github.com/gbprod/yanky.nvim">gbprod/yanky.nvim</a> 插件的支持。</span>
-  <br />
-  <span>在 <code>lua/plugins/config/yanky.lua</code> 文件中可以修改此插件的配置。</span>
-  <br />
-  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/telescope-yanky.png?raw=true" alt="telescope-yanky" />
-  <br />
   <span>查找项目，需要 <a href="https://github.com/ahmedkhalf/project.nvim">ahmedkhalf/project.nvim</a> 插件的支持。</span>
   <br />
-  <span>在 <code>lua/plugins/config/project.lua</code> 文件中可以修改此插件的配置。</sapn>
+  <span>在 <code>lua/plugins/project.lua</code> 文件中可以修改此插件的配置。</sapn>
   <br />
   <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/telescope-project.png?raw=true" alt="telescope-project" />
 </details>
@@ -211,29 +204,11 @@ let g:plug_url_format='https://ghproxy.com/https://github.com/%s'
 | `space` `e` `e` | 打开 `nvim-tree` |
 | `q`             | 退出 `nvim-tree` |
 
-在 `lua/plugins/config/nvim-tree.lua` 文件中可以修改配置。
+在 `lua/plugins/nvim-tree.lua` 文件中可以修改配置。
 
 <details>
   <summary><strong>Demo (click to expand)</strong></summary>
   <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/nvim-tree.png?raw=true" alt="nvim-tree" />
-</details>
-
-### :bookmark_tabs: 目录大纲 - symbols-outline
-
----
-
-**插件地址**：[simrat39/symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)
-
-| 快捷键          | 描述                   |
-|-----------------|------------------------|
-| `space` `s` `t` | 打开 `symbols-outline` |
-| `q`             | 退出 `symbols-outline` |
-
-在 `lua/plugins/config/symbols-outline.lua` 文件中可以修改配置。
-
-<details>
-  <summary><strong>Demo (click to expand)</strong></summary>
-  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/symbols-outline.png?raw=true" alt="symbols-outline" />
 </details>
 
 ### :pager: 终端 - vim-floaterm
@@ -272,7 +247,7 @@ let g:plug_url_format='https://ghproxy.com/https://github.com/%s'
 | `space` `h` `p` | 上一处 `hunk`     |
 | `space` `h` `l` | 预览 `hunk`       |
 
-在 `lua/plugins/config/gitsigns.lua` 文件中可以修改配置。
+在 `lua/plugins/gitsigns.lua` 文件中可以修改配置。
 
 <details>
   <summary><strong>Demo (click to expand)</strong></summary>
@@ -290,7 +265,7 @@ let g:plug_url_format='https://ghproxy.com/https://github.com/%s'
 | `space` `g` `g` | 打开 `lazygit` |
 | `q`             | 退出 `lazygit` |
 
-在 `lua/plugins/config/lazygit.lua` 文件中可以修改配置。
+在 `lua/plugins/lazygit.lua` 文件中可以修改配置。
 
 <details>
   <summary><strong>Demo (click to expand)</strong></summary>

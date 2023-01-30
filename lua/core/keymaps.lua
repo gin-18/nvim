@@ -64,9 +64,6 @@ keymap('n', '<SPACE>hn', '<Cmd>Gitsigns next_hunk<CR>', opts)
 keymap('n', '<SPACE>hp', '<Cmd>Gitsigns prev_hunk<CR>', opts)
 keymap('n', '<SPACE>hr', '<Cmd>Gitsigns reset_hunk<CR>', opts)
 
--- symbols-outine
-keymap('n', '<SPACE>st', '<Cmd>SymbolsOutline<CR>', opts)
-
 -- floaterm
 keymap('n', '<SPACE>tt', '<Cmd>FloatermToggle<CR>', opts)
 keymap('n', '<SPACE>tn', '<Cmd>FloatermNew<CR>', opts)
