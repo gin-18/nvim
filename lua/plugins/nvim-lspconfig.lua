@@ -56,7 +56,7 @@ local on_attach = function(client, bufnr)
   end
 end
 
-local servers = { 'vimls', 'sumneko_lua', 'html', 'cssls', 'tsserver', 'jsonls', 'emmet_ls' }
+local servers = { 'vimls', 'lua_ls', 'html', 'cssls', 'tsserver', 'jsonls', 'emmet_ls' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup({
     on_attach = on_attach,
@@ -65,7 +65,7 @@ for _, lsp in ipairs(servers) do
 end
 
 -- lspconfig for each
-require('lspconfig').sumneko_lua.setup({
+require('lspconfig').lua_ls.setup({
   settings = {
     Lua = {
       diagnostics = {
