@@ -97,7 +97,7 @@ Plug 'lukas-reineke/indent-blankline.nvim'  " indent line
 Plug 'yaocccc/nvim-hlchunk'
 Plug 'tpope/vim-surround'
 Plug 'windwp/nvim-autopairs'
-Plug 'glepnir/dashboard-nvim'
+Plug 'goolord/alpha-nvim'
 call plug#end()
 
 " -----------------------------------------------------------------
@@ -171,7 +171,7 @@ require('core.colorscheme')
 require('plugins.nvim-treesitter')
 require('plugins.lualine')
 require('plugins.indent-blankline')
-require('plugins.dashboard-nvim')
+require('plugins.alpha-nvim')
 
 -- lsp
 require('plugins.nvim-lspconfig')

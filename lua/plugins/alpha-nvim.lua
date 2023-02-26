@@ -1,11 +1,7 @@
-local status_ok, dashboard = pcall(require, 'dashboard')
-if not status_ok then
-  vim.notify('dashboard-nvim not found!')
-  return
-end
+local alpha = require("alpha")
+local dashboard = require("alpha.themes.dashboard")
 
-dashboard.custom_header = {
-  '',
+dashboard.section.header.val = {
   '████████████▛▟█████████████████████▛████▛▟████████████████████████████████████████████████████████▎████▜',
   '███████████▛▟██████████████████▀▜▅▇████▛▟█████████████████████████████████████████████████████████▏███▙█',
   '███████████▐█████████████████▜▅████████▐██████████████████████████████████████████████████████████▐█████',
@@ -44,30 +40,18 @@ dashboard.custom_header = {
   '█▛▟██▙▁                                                                                     ▇████████▇▄▂',
   '                                                                                                        ',
 }
-dashboard.custom_center = {
-  { icon = ' ', desc = 'New Files                                ', shortcut = 'n', action = 'DashboardNewFile' },
-  { icon = ' ', desc = 'Search Project                           ', shortcut = 'p', action = 'Telescope projects' },
-  { icon = ' ', desc = 'NvimTree Explorer                        ', shortcut = 'e', action = 'PlugUpdate' },
-  { icon = 'ﮮ ', desc = 'Update Plugins                           ', shortcut = 'u', action = 'PlugUpdate' },
-  { icon = 'ﯯ ', desc = 'Setting                                  ', shortcut = 's', action = 'edit $MYVIMRC' },
-  { icon = ' ', desc = 'Exit                                     ', shortcut = 'q', action = 'exit' },
-}
-dashboard.custom_footer = { 'gin-neovim' }
-dashboard.hide_statusline = false
 
-vim.api.nvim_create_autocmd('Filetype', {
-  pattern = 'dashboard',
-  group = vim.api.nvim_create_augroup('Dashboard_augroup', { clear = true }),
-  callback = function()
-    vim.cmd [[
-      setlocal buftype=nofile
-      setlocal nonumber norelativenumber nocursorline noruler
-      nnoremap <buffer> n <Cmd>DashboardNewFile<CR>
-      nnoremap <buffer> p <Cmd>Telescope projects<CR>
-      nnoremap <buffer> e <Cmd>NvimTreeToggle<CR>
-      nnoremap <buffer> u <Cmd>PlugUpdate<CR>
-      nnoremap <buffer> s <Cmd>edit $MYVIMRC<CR>
-      nnoremap <buffer> q <Cmd>exit<CR>
-    ]]
-  end
-})
+dashboard.section.buttons.val = {
+  dashboard.button("n", " New File", "<Cmd>ene <BAR> startinsert<CR>"),
+  dashboard.button("p", " Search Projects", "<Cmd>Telescope projects<CR>"),
+  dashboard.button("e", " NvimTree Explorer", "<Cmd>NvimTreeToggle<CR>"),
+  dashboard.button("u", "ﮮ Update Plugins", "<Cmd>PlugUpdate<CR>"),
+  dashboard.button("s", "ﯯ Setting", "<Cmd>e $MYVIMRC<CR>"),
+  dashboard.button("q", " Quit Neovim", "<Cmd>qa<CR>")
+}
+
+dashboard.section.footer.val = "GIN-NEOVIM"
+
+alpha.setup(dashboard.opts)
+
+vim.cmd([[autocmd FileType alpha setlocal nofoldenable]])
