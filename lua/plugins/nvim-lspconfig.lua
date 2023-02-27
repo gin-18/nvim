@@ -56,7 +56,7 @@ local on_attach = function(client, bufnr)
   end
 end
 
-local servers = { 'vimls', 'lua_ls', 'html', 'cssls', 'tsserver', 'jsonls', 'emmet_ls' }
+local servers = { 'vimls', 'lua_ls', 'html', 'cssls', 'tsserver', 'vuels', 'jsonls', 'emmet_ls' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup({
     on_attach = on_attach,

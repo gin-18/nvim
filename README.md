@@ -16,6 +16,8 @@
 7. fzf
 8. xclip
 9. ripgrep
+10. wget
+11. unzip
 ```
 
 ### Arch Linux 使用 pacman 和 yay 安装依赖
