@@ -1,6 +1,6 @@
 # neovim 配置
 
-<img src="https://github.com/GIN-18/readme-image/blob/master/nvim/nvim-start.png?raw=true" alt="nvim-start" />
+<img src="https://github.com/GIN-18/pictures/blob/master/readme-images/nvim/nvim-alpha.png?raw=true" alt="nvim-start" />
 
 ## 1. 依赖
 
@@ -54,7 +54,6 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
 |-------------------|--------------------------------|
 | `s`               | 保存                           |
 | `shift` `s`       | 保存退出                       |
-| `shift` `q`       | 不保存退出                     |
 | `shift` `h`       | 光标移动到行首                 |
 | `shift` `l`       | 光标移动到行尾                 |
 | `shift` `j`       | 光标向下移动5行                |
@@ -77,17 +76,11 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
 
 ## 4. 基本功能
 
-### :necktie: 插件管理器 - vim-plug
+### :necktie: 插件管理器 - lazy.nvim
 
 ---
 
-**插件管理器地址**：[junegunn/vim-plug](https://github.com/junegunn/vim-plug)
-
-如果在国内插件下载得太慢，可以在配置文件中添加以下代码，以从镜像网站下载插件。
-
-```vimscript
-let g:plug_url_format='https://ghproxy.com/https://github.com/%s'
-```
+**插件管理器地址**：[folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 
 ### :wrench: lsp 支持 - nvim-lspconfig
 
@@ -110,7 +103,7 @@ let g:plug_url_format='https://ghproxy.com/https://github.com/%s'
 
 <details>
   <summary><strong>Demo (click to expand)</strong></summary>
-  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/nvim-lspconfig-diagnostic.png?raw=true" alt="nvim-lspconfig-diagnostic" />
+  <img src="https://github.com/GIN-18/pictures/blob/master/readme-images/nvim/nvim-lspconfig-diagnostic.png?raw=true" alt="nvim-lspconfig-diagnostic" />
 </details>
 
 ### :computer: 自动补全 - nvim-cmp
@@ -133,15 +126,15 @@ let g:plug_url_format='https://ghproxy.com/https://github.com/%s'
   <summary><strong>Demo (click to expand)</strong></summary>
   <span>内容补全</span>
   <br />
-  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/nvim-cmp.png?raw=true" alt="nvim-cmp" />
+  <img src="https://github.com/GIN-18/pictures/blob/master/readme-images/nvim/nvim-cmp.png?raw=true" alt="nvim-cmp" />
   <br />
   <span>命令行补全</span>
   <br />
-  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/nvim-cmdline.png?raw=true" alt="nvim-cmdline" />
+  <img src="https://github.com/GIN-18/pictures/blob/master/readme-images/nvim/nvim-cmdline.png?raw=true" alt="nvim-cmdline" />
   <br />
   <span>[ "/", "?" ] 查找补全</span>
   <br />
-  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/nvim-search.png?raw=true" alt="nvim-search" />
+  <img src="https://github.com/GIN-18/pictures/blob/master/readme-images/nvim/nvim-search.png?raw=true" alt="nvim-search" />
 </details>
 
 ### :books: 代码片段 - luasnip
@@ -158,7 +151,7 @@ let g:plug_url_format='https://ghproxy.com/https://github.com/%s'
   <summary><strong>Demo (click to expand)</strong></summary>
   <span>代码片段的写法和 <code>vscode</code> 的代码片段的写法一样。</span>
   <br />
-  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/luasnip.png?raw=true" alt="luasnip" />
+  <img src="https://github.com/GIN-18/pictures/blob/master/readme-images/nvim/luasnip.png?raw=true" alt="luasnip" />
 </details>
 
 ### :telescope: 模糊搜索 - telescope
@@ -192,7 +185,7 @@ let g:plug_url_format='https://ghproxy.com/https://github.com/%s'
   <br />
   <span>在 <code>lua/plugins/project.lua</code> 文件中可以修改此插件的配置。</sapn>
   <br />
-  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/telescope-project.png?raw=true" alt="telescope-project" />
+  <img src="https://github.com/GIN-18/pictures/blob/master/readme-images/nvim/telescope-project.png?raw=true" alt="telescope-project" />
 </details>
 
 ### :file_folder: 文件管理器 - nvim-tree
@@ -210,28 +203,7 @@ let g:plug_url_format='https://ghproxy.com/https://github.com/%s'
 
 <details>
   <summary><strong>Demo (click to expand)</strong></summary>
-  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/nvim-tree.png?raw=true" alt="nvim-tree" />
-</details>
-
-### :pager: 终端 - vim-floaterm
-
----
-
-**插件地址**：[voldikss/vim-floaterm](https://github.com/voldikss/vim-floaterm)
-
-
-| 快捷键          | 描述                         |
-|-----------------|------------------------------|
-| `space` `t` `t` | 普通模式下，打开终端         |
-| `space` `t` `n` | 普通模式下，打开一个新终端   |
-| `space` `t` `k` | 普通模式下，关闭所有终端     |
-| `alt` `t`       | 终端模式下，隐藏终端         |
-| `alt` `n`       | 终端模式下，切换到下一个终端 |
-| `alt` `p`       | 终端模式下，切换到上一个终端 |
-
-<details>
-  <summary><strong>Demo (click to expand)</strong></summary>
-  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/vim-floaterm.png?raw=true" alt="vim-floaterm" />
+  <img src="https://github.com/GIN-18/pictures/blob/master/readme-images/nvim/nvim-tree.png?raw=true" alt="nvim-tree" />
 </details>
 
 ## 5. git 支持
@@ -253,7 +225,7 @@ let g:plug_url_format='https://ghproxy.com/https://github.com/%s'
 
 <details>
   <summary><strong>Demo (click to expand)</strong></summary>
-  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/gitsigns.png?raw=true" alt="gitsigns" />
+  <img src="https://github.com/GIN-18/pictures/blob/master/readme-images/nvim/gitsigns.png?raw=true" alt="gitsigns" />
 </details>
 
 ### :koala: git 操作 - lazygit
@@ -271,7 +243,7 @@ let g:plug_url_format='https://ghproxy.com/https://github.com/%s'
 
 <details>
   <summary><strong>Demo (click to expand)</strong></summary>
-  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/lazygit.png?raw=true" alt="lazygit" />
+  <img src="https://github.com/GIN-18/pictures/blob/master/readme-images/nvim/lazygit.png?raw=true" alt="lazygit" />
 </details>
 
 ## 6. Markdown 支持
@@ -305,7 +277,7 @@ let g:plug_url_format='https://ghproxy.com/https://github.com/%s'
 
 <details>
   <summary><strong>Demo (click to expand)</strong></summary>
-  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/md-quick-input.gif?raw=true" alt="md-quick-input" />
+  <img src="https://github.com/GIN-18/pictures/blob/master/readme-images/nvim/md-quick-input.gif?raw=true" alt="md-quick-input" />
 </details>
 
 ### :eyes: Markdown 预览 - markdown-preview
@@ -324,7 +296,7 @@ let g:plug_url_format='https://ghproxy.com/https://github.com/%s'
 
 <details>
   <summary><strong>Demo (click to expand)</strong></summary>
-  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/markdown-preview.gif?raw=true" alt="markdown-preview" />
+  <img src="https://github.com/GIN-18/pictures/blob/master/readme-images/nvim/markdown-preview.gif?raw=true" alt="markdown-preview" />
 </details>
 
 ### :straight_ruler: 表格模板 - vim-table-mode
@@ -342,7 +314,7 @@ let g:plug_url_format='https://ghproxy.com/https://github.com/%s'
 
 <details>
   <summary><strong>Demo (click to expand)</strong></summary>
-  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/table-mode.gif?raw=true" alt="table-mode" />
+  <img src="https://github.com/GIN-18/pictures/blob/master/readme-images/nvim/table-mode.gif?raw=true" alt="table-mode" />
 </details>
 
 ### :clipboard: 从剪贴板插入图片 - md-img-paste
@@ -359,5 +331,5 @@ let g:plug_url_format='https://ghproxy.com/https://github.com/%s'
 
 <details>
   <summary><strong>Demo (click to expand)</strong></summary>
-  <img src="https://github.com/GIN-18/readme-image/blob/master/nvim/md-img-paste.gif?raw=true" alt="md-img-paste" />
+  <img src="https://github.com/GIN-18/pictures/blob/master/readme-images/nvim/md-img-paste.gif?raw=true" alt="md-img-paste" />
 </details>

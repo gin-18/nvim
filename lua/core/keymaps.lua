@@ -8,7 +8,6 @@ local keymap = vim.keymap.set
 -- remap
 keymap('n', 's', '<Cmd>w<CR>', opts)
 keymap('n', 'S', '<Cmd>wq<CR>', opts)
-keymap('n', 'Q', '<Cmd>q<CR>', opts)
 keymap('n', 'K', '5k', opts)
 keymap('n', 'J', '5j', opts)
 keymap('n', 'H', '0', opts)
@@ -63,14 +62,6 @@ keymap('n', '<SPACE>hl', '<Cmd>Gitsigns preview_hunk<CR>', opts)
 keymap('n', '<SPACE>hn', '<Cmd>Gitsigns next_hunk<CR>', opts)
 keymap('n', '<SPACE>hp', '<Cmd>Gitsigns prev_hunk<CR>', opts)
 keymap('n', '<SPACE>hr', '<Cmd>Gitsigns reset_hunk<CR>', opts)
-
--- floaterm
-keymap('n', '<SPACE>tt', '<Cmd>FloatermToggle<CR>', opts)
-keymap('n', '<SPACE>tn', '<Cmd>FloatermNew<CR>', opts)
-keymap('n', '<SPACE>tk', '<Cmd>FloatermKill!<CR>', opts)
-keymap('t', '<M-t>', '<C-\\><C-n><Cmd>FloatermToggle<CR>', opts)
-keymap('t', '<M-n>', '<C-\\><C-n><Cmd>FloatermNext<CR>', opts)
-keymap('t', '<M-p>', '<C-\\><C-n><Cmd>FloatermPrev<CR>', opts)
 
 -- table-mode
 keymap('n', '<M-T>', '<Cmd>TableModeToggle<CR>', opts)
