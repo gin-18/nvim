@@ -132,7 +132,6 @@ local plugins = {
   --   version = "*",
   --   config = true,
   -- },
-  -- { "tpope/vim-surround" },
   -- { "simrat39/symbols-outline.nvim" },
   { "yaocccc/nvim-hlchunk" },
 
