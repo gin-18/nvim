@@ -5,6 +5,17 @@ if not status_ok then
 end
 
 mason_lspconfig.setup({
-  ensure_installed = { "vimls", "lua_ls", "html", "cssls", "tsserver", "vuels", "jsonls", "emmet_ls", "tailwindcss" },
+  ensure_installed = {
+    "clangd",
+    "vimls",
+    "lua_ls",
+    "html",
+    "cssls",
+    "tsserver",
+    "vuels",
+    "jsonls",
+    "emmet_ls",
+    "tailwindcss",
+  },
   automatic_installation = false,
 })

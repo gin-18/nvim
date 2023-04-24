@@ -10,7 +10,16 @@ for _, config in pairs(require("nvim-treesitter.parsers").get_parser_configs()) 
 end
 
 nvim_treesitter.setup({
-  ensure_installed = {"html", "css", "vue", "lua", "javascript", "typescript", "python"},
+  ensure_installed = {
+    "c",
+    "html",
+    "css",
+    "vue",
+    "lua",
+    "javascript",
+    "typescript",
+    "python"
+  },
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false
