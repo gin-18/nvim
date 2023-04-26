@@ -1,12 +1,12 @@
-local status_ok, cmp = pcall(require, 'cmp')
+local status_ok, cmp = pcall(require, "cmp")
 if not status_ok then
-  vim.notify('cmp not found!')
+  vim.notify("cmp not found!")
   return
 end
 
-local status_ok, luasnip = pcall(require, 'luasnip')
+local status_ok, luasnip = pcall(require, "luasnip")
 if not status_ok then
-  vim.notify('luasnip not found!')
+  vim.notify("luasnip not found!")
   return
 end
 
@@ -56,35 +56,35 @@ cmp.setup({
     documentation = cmp.config.window.bordered(),
   },
   formatting = {
-    fields = { 'kind', 'abbr', 'menu' },
+    fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
       -- kind icons
-      vim_item.kind = string.format('%s', kind_icons[vim_item.kind])
+      vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
       vim_item.menu = ({
-        nvim_lsp = '[LSP]',
-        luasnip = '[Luasnip]',
-        buffer = '[Buffer]',
-        path = '[Path]',
-        treesitter = '[Treesitter]',
+        nvim_lsp = "[LSP]",
+        luasnip = "[Luasnip]",
+        buffer = "[Buffer]",
+        path = "[Path]",
+        treesitter = "[Treesitter]",
       })[entry.source.name]
       return vim_item
     end,
   },
   sources = {
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-    { name = 'buffer' },
-    { name = 'treesitter' },
-    { name = 'path' },
+    { name = "nvim_lsp" },
+    { name = "luasnip" },
+    { name = "buffer" },
+    { name = "treesitter" },
+    { name = "path" },
   },
   mapping = cmp.mapping.preset.insert {
-    ['<C-p>'] = cmp.mapping.select_prev_item(),
-    ['<C-n>'] = cmp.mapping.select_next_item(),
-    ['<CR>'] = cmp.mapping.confirm({
+    ["<C-p>"] = cmp.mapping.select_prev_item(),
+    ["<C-n>"] = cmp.mapping.select_next_item(),
+    ["<CR>"] = cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     }),
-    ['<C-j>'] = cmp.mapping(function(fallback)
+    ["<C-j>"] = cmp.mapping(function(fallback)
       if luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
       elseif cmp.visible() then
@@ -95,7 +95,7 @@ cmp.setup({
         fallback()
       end
     end, { "i", "s" }),
-    ['<C-k>'] = cmp.mapping(function(fallback)
+    ["<C-k>"] = cmp.mapping(function(fallback)
       if luasnip.jumpable(-1) then
         luasnip.jump(-1)
       elseif cmp.visible() then
@@ -106,16 +106,16 @@ cmp.setup({
     end, { "i", "s" }),
   }
 })
-cmp.setup.cmdline({ '/', '?' }, {
+cmp.setup.cmdline({ "/", "?" }, {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
-    { name = 'buffer' }
+    { name = "buffer" }
   }
 })
-cmp.setup.cmdline(':', {
+cmp.setup.cmdline(":", {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
-    { name = 'path' },
-    { name = 'cmdline' }
+    { name = "path" },
+    { name = "cmdline" }
   })
 })

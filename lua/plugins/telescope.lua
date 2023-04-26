@@ -1,14 +1,14 @@
-local status_ok, telescope = pcall(require, 'telescope')
+local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then
-  vim.notify('telescope not found!')
+  vim.notify("telescope not found!")
   return
 end
 
 telescope.setup({
   defaults = {
-    prompt_prefix = ' ',
-    selection_caret = ' ',
-    layout_stratgy = 'center',
+    prompt_prefix = " ",
+    selection_caret = " ",
+    layout_stratgy = "center",
     layout_config = {
       width = 0.8,
       height = 0.7,
@@ -23,11 +23,11 @@ telescope.setup({
     mappings = {
       i = {
         ["<C-c>"] = false,
-        ["<esc>"] = require('telescope.actions').close,
-        ["<C-n>"] = require('telescope.actions').move_selection_next,
-        ["<C-p>"] = require('telescope.actions').move_selection_previous,
-        ["<C-j>"] = require('telescope.actions').cycle_history_next,
-        ["<C-k>"] = require('telescope.actions').cycle_history_prev,
+        ["<esc>"] = require("telescope.actions").close,
+        ["<C-n>"] = require("telescope.actions").move_selection_next,
+        ["<C-p>"] = require("telescope.actions").move_selection_previous,
+        ["<C-j>"] = require("telescope.actions").cycle_history_next,
+        ["<C-k>"] = require("telescope.actions").cycle_history_prev,
       }
     }
   },
@@ -45,6 +45,6 @@ telescope.setup({
     }
   }
 })
-require('telescope').load_extension('fzf')
-require('telescope').load_extension('projects')
+require("telescope").load_extension("fzf")
+require("telescope").load_extension("projects")
 -- require("telescope").load_extension("yank_history")

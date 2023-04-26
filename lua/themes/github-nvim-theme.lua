@@ -13,10 +13,10 @@ require("github-theme").setup({
       NvimTreeNormal = { bg = c.bg },
       -- TelescopeBorder = { fg = c.fg },
       -- TelescopeSelection = { bg = c.border },
-      LspDiagnosticsVirtualTextHint = { bg = 'NONE' },
-      DashboardFooter = { gui = 'NONE' }
-      -- LspDiagnosticsVirtualTextHint = { fg = '#81A1C1', bg = 'NONE' },
-      -- DiagnosticHint = { fg = '#81A1C1' }
+      LspDiagnosticsVirtualTextHint = { bg = "NONE" },
+      DashboardFooter = { gui = "NONE" }
+      -- LspDiagnosticsVirtualTextHint = { fg = "#81A1C1", bg = "NONE" },
+      -- DiagnosticHint = { fg = "#81A1C1" }
       -- this will remove the highlight groups
       -- TSField = {},
     }

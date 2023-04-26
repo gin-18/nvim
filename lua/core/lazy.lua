@@ -133,7 +133,7 @@ local plugins = {
   --   config = true,
   -- },
   -- { "simrat39/symbols-outline.nvim" },
-  { "yaocccc/nvim-hlchunk" },
+  -- { "yaocccc/nvim-hlchunk" },
 
   -- markdown
   {
@@ -167,6 +167,5 @@ local opts = {
     border = "rounded",
   },
 }
-
 
 require("lazy").setup(plugins, opts)

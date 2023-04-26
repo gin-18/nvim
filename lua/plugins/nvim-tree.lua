@@ -1,6 +1,6 @@
-local status_ok, nvim_tree = pcall(require, 'nvim-tree')
+local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
-  vim.notify('nvim-tree not found!')
+  vim.notify("nvim-tree not found!")
   return
 end
 
@@ -10,9 +10,6 @@ nvim_tree.setup({
   hijack_cursor = false,
   hijack_netrw = true,
   hijack_unnamed_buffer_when_opening = false,
-  ignore_buffer_on_setup = false,
-  open_on_setup = false,
-  open_on_setup_file = false,
   open_on_tab = false,
   sort_by = "name",
   view = {
@@ -86,7 +83,6 @@ nvim_tree.setup({
     update_root = true,
     ignore_list = {},
   },
-  ignore_ft_on_setup = {},
   system_open = {
     cmd = "",
     args = {},
@@ -95,10 +91,10 @@ nvim_tree.setup({
     enable = true,
     show_on_dirs = true,
     icons = {
-      error = "",
-      warning = "",
-      hint = "",
-      info = "",
+      error = "",
+      warning = "",
+      hint = "",
+      info = ""
     },
   },
   filters = {
