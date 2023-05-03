@@ -4,7 +4,7 @@ if not vim.loop.fs_stat(lazypath) then
     "git",
     "clone",
     "--filter=blob:none",
-    "https://ghproxy.com/https://github.com/folke/lazy.nvim.git",
+    "https://github.com/folke/lazy.nvim.git",
     "--branch=stable",
     lazypath,
   })
@@ -13,32 +13,43 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
   -- dependencies
-  { "nvim-lua/plenary.nvim",
+  {
+    "nvim-lua/plenary.nvim",
+    lazy = true,
+  },
+  {
+    "nvim-tree/nvim-web-devicons",
     lazy = true,
   },
 
   -- ui
-  { "andersevenrud/nordic.nvim",
+  {
+    "andersevenrud/nordic.nvim",
     lazy = true,
   },
-  { "catppuccin/nvim",
+  {
+    "catppuccin/nvim",
     name = "catppuccin",
     lazy = true,
   },
-  { "nvim-treesitter/nvim-treesitter",
+  {
+    "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     event = {
       "BufReadPost",
       "BufNewFile",
     },
   },
-  { "nvim-lualine/lualine.nvim",
+  {
+    "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
   },
-  { "goolord/alpha-nvim",
+  {
+    "goolord/alpha-nvim",
     event = "VimEnter",
   },
-  { "lukas-reineke/indent-blankline.nvim",
+  {
+    "lukas-reineke/indent-blankline.nvim",
     event = {
       "BufReadPost",
       "BufNewFile",
@@ -46,16 +57,19 @@ local plugins = {
   },
 
   -- lsp
-  { "neovim/nvim-lspconfig",
+  {
+    "neovim/nvim-lspconfig",
     event = {
       "BufReadPre", "BufNewFile",
     },
   },
-  { "williamboman/mason.nvim",
+  {
+    "williamboman/mason.nvim",
     cmd = "Mason",
   },
   { "williamboman/mason-lspconfig.nvim" },
-  { "jose-elias-alvarez/null-ls.nvim",
+  {
+    "jose-elias-alvarez/null-ls.nvim",
     event = {
       "BufReadPre",
       "BufNewFile",
@@ -83,42 +97,46 @@ local plugins = {
     "nvim-tree/nvim-tree.lua",
     cmd = "NvimTreeToggle",
     version = "*",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-      lazy = true,
-    },
   },
 
   -- file finder
-  { "nvim-telescope/telescope.nvim",
+  {
+    "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
   },
-  { "nvim-telescope/telescope-fzf-native.nvim",
+  {
+    "nvim-telescope/telescope-fzf-native.nvim",
     build = "make",
   },
-  { "ahmedkhalf/project.nvim",
+  {
+    "ahmedkhalf/project.nvim",
     event = "VeryLazy",
   },
 
   -- git
-  { "lewis6991/gitsigns.nvim",
+  {
+    "lewis6991/gitsigns.nvim",
     event = {
       "BufReadPre",
       "BufNewFile",
     },
   },
-  { "kdheepak/lazygit.nvim",
+  {
+    "kdheepak/lazygit.nvim",
     cmd = "LazyGit",
   },
 
   -- utils
-  { "windwp/nvim-autopairs",
+  {
+    "windwp/nvim-autopairs",
     event = "VeryLazy",
   },
-  { "numToStr/Comment.nvim",
+  {
+    "numToStr/Comment.nvim",
     keys = "<SPACE>cc",
   },
-  { "folke/todo-comments.nvim",
+  {
+    "folke/todo-comments.nvim",
     cmd = {
       "TodoTrouble",
       "TodoTelescope",
@@ -128,12 +146,15 @@ local plugins = {
       "BufNewFile",
     },
   },
+  {
+    "codota/tabnine-nvim",
+    build = "./dl_binaries.sh"
+  },
   -- { "akinsho/toggleterm.nvim",
   --   version = "*",
   --   config = true,
   -- },
   -- { "simrat39/symbols-outline.nvim" },
-  -- { "yaocccc/nvim-hlchunk" },
 
   -- markdown
   {
@@ -143,26 +164,30 @@ local plugins = {
       vim.fn["mkdp#util#install"]()
     end,
   },
-  { "dhruvasagar/vim-table-mode",
+  {
+    "dhruvasagar/vim-table-mode",
     ft = "markdown",
   },
-  { "ferrine/md-img-paste.vim",
+  {
+    "ferrine/md-img-paste.vim",
     ft = "markdown",
   },
 
   -- front end
-  { "windwp/nvim-ts-autotag",
+  {
+    "windwp/nvim-ts-autotag",
     event = "VeryLazy",
   },
-  { "norcalli/nvim-colorizer.lua",
+  {
+    "norcalli/nvim-colorizer.lua",
     event = "VeryLazy",
   },
 }
 
 local opts = {
-  git = {
-    url_format = "https://ghproxy.com/https://github.com/%s",
-  },
+  -- git = {
+  --   url_format = "https://ghproxy.com/https://github.com/%s",
+  -- },
   ui = {
     border = "rounded",
   },

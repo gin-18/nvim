@@ -4,7 +4,7 @@ require("catppuccin").setup({
   highlight_overrides = {
     all = function (colors)
       return {
-        NormalFloat = { bg = colors.base }
+        NormalFloat = { bg = colors.base },
       }
     end
   }

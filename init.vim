@@ -114,4 +114,5 @@ require('plugins.project')
 require('plugins.comment')
 require('plugins.todo-comments')
 require('plugins.nvim-autopairs')
+require('plugins.tabnine')
 EOF
