@@ -5,9 +5,9 @@ if not status_ok then
 end
 
 -- 修改下载地址
--- for _, config in pairs(require("nvim-treesitter.parsers").get_parser_configs()) do
---   config.install_info.url = config.install_info.url:gsub("https://github.com/", "https://ghproxy.com/https://github.com/")
--- end
+for _, config in pairs(require("nvim-treesitter.parsers").get_parser_configs()) do
+  config.install_info.url = config.install_info.url:gsub("https://github.com/", "https://ghproxy.com/https://github.com/")
+end
 
 nvim_treesitter.setup({
   ensure_installed = {

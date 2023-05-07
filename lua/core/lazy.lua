@@ -4,7 +4,7 @@ if not vim.loop.fs_stat(lazypath) then
     "git",
     "clone",
     "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
+    "https://ghproxy.com/https://github.com/folke/lazy.nvim.git",
     "--branch=stable",
     lazypath,
   })
@@ -82,6 +82,10 @@ local plugins = {
   { "hrsh7th/cmp-path" },
   { "hrsh7th/cmp-buffer" },
   { "hrsh7th/cmp-cmdline" },
+  {
+    "tzachar/cmp-tabnine",
+     build = "./install.sh",
+  },
 
   -- snippet
   {
@@ -146,10 +150,6 @@ local plugins = {
       "BufNewFile",
     },
   },
-  {
-    "codota/tabnine-nvim",
-    build = "./dl_binaries.sh"
-  },
   -- { "akinsho/toggleterm.nvim",
   --   version = "*",
   --   config = true,
@@ -185,9 +185,9 @@ local plugins = {
 }
 
 local opts = {
-  -- git = {
-  --   url_format = "https://ghproxy.com/https://github.com/%s",
-  -- },
+  git = {
+    url_format = "https://ghproxy.com/https://github.com/%s",
+  },
   ui = {
     border = "rounded",
   },

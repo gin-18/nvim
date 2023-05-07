@@ -10,6 +10,23 @@ if not status_ok then
   return
 end
 
+--- config for cmp-tabnine
+local tabnine = require("cmp_tabnine.config")
+
+tabnine:setup({
+  max_lines = 1000,
+  max_num_results = 20,
+  sort = true,
+  run_on_every_keystroke = true,
+  snippet_placeholder = "..",
+  ignored_file_types = {
+    -- default is not to ignore
+    -- uncomment to ignore in lua:
+    -- lua = true
+  },
+  show_prediction_strength = false
+})
+
 local kind_icons = {
   Text = "",
   Method = "m",
@@ -66,7 +83,12 @@ cmp.setup({
         buffer = "[Buffer]",
         path = "[Path]",
         treesitter = "[Treesitter]",
+        cmp_tabnine = "[Tabnine]",
       })[entry.source.name]
+      -- set kind_icons for cmp_tabnine
+      if entry.source.name == "cmp_tabnine" and entry.completion_item.data ~=nil then
+        vim_item.kind = string.format("%s", "󰑫")
+      end
       return vim_item
     end,
   },
@@ -76,6 +98,7 @@ cmp.setup({
     { name = "buffer" },
     { name = "treesitter" },
     { name = "path" },
+    { name = "cmp_tabnine" },
   },
   mapping = cmp.mapping.preset.insert {
     ["<C-p>"] = cmp.mapping.select_prev_item(),
