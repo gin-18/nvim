@@ -19,6 +19,11 @@ augroup back_to_leave
   autocmd!
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 augroup END
+" 解决从telescope打开文件后不能折叠
+augroup fold_after_telescope
+  autocmd!
+  autocmd BufRead * autocmd BufWinEnter * ++once normal! zx
+augroup END
 
 " -----------------------------------------------------------------
 "                                                                 -
