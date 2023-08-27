@@ -4,7 +4,7 @@ opt.tabstop = 2
 opt.shiftwidth = 2
 opt.softtabstop = 2
 
-opt.scrolloff = 5
+opt.scrolloff = 18
 opt.encoding = "utf-8"
 
 opt.autoindent = true

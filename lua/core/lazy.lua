@@ -132,6 +132,10 @@ local plugins = {
 
   -- utils
   {
+    "Exafunction/codeium.vim",
+    event = "BufEnter"
+  },
+  {
     "windwp/nvim-autopairs",
     event = "VeryLazy",
   },
