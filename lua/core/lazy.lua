@@ -189,12 +189,12 @@ local plugins = {
 }
 
 local opts = {
-  git = {
-    url_format = "https://ghproxy.com/https://github.com/%s",
-  },
   ui = {
     border = "rounded",
   },
+  -- git = {
+  --   url_format = "https://ghproxy.com/https://github.com/%s",
+  -- },
 }
 
 require("lazy").setup(plugins, opts)
