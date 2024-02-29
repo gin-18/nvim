@@ -1,6 +1,6 @@
 # neovim 配置
 
-<img src="https://github.com/GIN-18/pictures/blob/master/readme-images/nvim/nvim-alpha.png?raw=true" alt="nvim-start" />
+<img src="https://github.com/gin-18/pictures/blob/master/readme/nvim/nvim.png?raw=true" alt="nvim" />
 
 ## 1. 依赖
 
@@ -103,7 +103,7 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
 
 <details>
   <summary><strong>Demo (click to expand)</strong></summary>
-  <img src="https://github.com/GIN-18/pictures/blob/master/readme-images/nvim/nvim-lspconfig-diagnostic.png?raw=true" alt="nvim-lspconfig-diagnostic" />
+  <img src="https://github.com/gin-18/pictures/blob/master/readme/nvim/nvim-lspconfig-diagnostic.png?raw=true" alt="nvim-lspconfig-diagnostic" />
 </details>
 
 ### :computer: 自动补全 - nvim-cmp
@@ -126,15 +126,15 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
   <summary><strong>Demo (click to expand)</strong></summary>
   <span>内容补全</span>
   <br />
-  <img src="https://github.com/GIN-18/pictures/blob/master/readme-images/nvim/nvim-cmp.png?raw=true" alt="nvim-cmp" />
+  <img src="https://github.com/gin-18/pictures/blob/master/readme/nvim/nvim-cmp.png?raw=true" alt="nvim-cmp" />
   <br />
   <span>命令行补全</span>
   <br />
-  <img src="https://github.com/GIN-18/pictures/blob/master/readme-images/nvim/nvim-cmdline.png?raw=true" alt="nvim-cmdline" />
+  <img src="https://github.com/gin-18/pictures/blob/master/readme/nvim/nvim-cmdline.png?raw=true" alt="nvim-cmdline" />
   <br />
   <span>[ "/", "?" ] 查找补全</span>
   <br />
-  <img src="https://github.com/GIN-18/pictures/blob/master/readme-images/nvim/nvim-search.png?raw=true" alt="nvim-search" />
+  <img src="https://github.com/gin-18/pictures/blob/master/readme/nvim/nvim-search.png?raw=true" alt="nvim-search" />
 </details>
 
 ### :books: 代码片段 - luasnip
@@ -151,7 +151,7 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
   <summary><strong>Demo (click to expand)</strong></summary>
   <span>代码片段的写法和 <code>vscode</code> 的代码片段的写法一样。</span>
   <br />
-  <img src="https://github.com/GIN-18/pictures/blob/master/readme-images/nvim/luasnip.png?raw=true" alt="luasnip" />
+  <img src="https://github.com/gin-18/pictures/blob/master/readme/nvim/luasnip.png?raw=true" alt="luasnip" />
 </details>
 
 ### :telescope: 模糊搜索 - telescope
@@ -185,7 +185,7 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
   <br />
   <span>在 <code>lua/plugins/project.lua</code> 文件中可以修改此插件的配置。</sapn>
   <br />
-  <img src="https://github.com/GIN-18/pictures/blob/master/readme-images/nvim/telescope-project.png?raw=true" alt="telescope-project" />
+  <img src="https://github.com/gin-18/pictures/blob/master/readme/nvim/telescope-project.png?raw=true" alt="telescope-project" />
 </details>
 
 ### :file_folder: 文件管理器 - nvim-tree
@@ -203,7 +203,7 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
 
 <details>
   <summary><strong>Demo (click to expand)</strong></summary>
-  <img src="https://github.com/GIN-18/pictures/blob/master/readme-images/nvim/nvim-tree.png?raw=true" alt="nvim-tree" />
+  <img src="https://github.com/gin-18/pictures/blob/master/readme/nvim/nvim-tree.png?raw=true" alt="nvim-tree" />
 </details>
 
 ## 5. git 支持
@@ -225,7 +225,7 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
 
 <details>
   <summary><strong>Demo (click to expand)</strong></summary>
-  <img src="https://github.com/GIN-18/pictures/blob/master/readme-images/nvim/gitsigns.png?raw=true" alt="gitsigns" />
+  <img src="https://github.com/gin-18/pictures/blob/master/readme/nvim/gitsigns.png?raw=true" alt="gitsigns" />
 </details>
 
 ### :koala: git 操作 - lazygit
@@ -243,7 +243,7 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
 
 <details>
   <summary><strong>Demo (click to expand)</strong></summary>
-  <img src="https://github.com/GIN-18/pictures/blob/master/readme-images/nvim/lazygit.png?raw=true" alt="lazygit" />
+  <img src="https://github.com/gin-18/pictures/blob/master/readme/nvim/lazygit.png?raw=true" alt="lazygit" />
 </details>
 
 ## 6. Markdown 支持
@@ -277,7 +277,7 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
 
 <details>
   <summary><strong>Demo (click to expand)</strong></summary>
-  <img src="https://github.com/GIN-18/pictures/blob/master/readme-images/nvim/md-quick-input.gif?raw=true" alt="md-quick-input" />
+  <img src="https://github.com/gin-18/pictures/blob/master/readme/nvim/md-quick-input.gif?raw=true" alt="md-quick-input" />
 </details>
 
 ### :eyes: Markdown 预览 - markdown-preview
@@ -296,7 +296,7 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
 
 <details>
   <summary><strong>Demo (click to expand)</strong></summary>
-  <img src="https://github.com/GIN-18/pictures/blob/master/readme-images/nvim/markdown-preview.gif?raw=true" alt="markdown-preview" />
+  <img src="https://github.com/gin-18/pictures/blob/master/readme/nvim/markdown-preview.gif?raw=true" alt="markdown-preview" />
 </details>
 
 ### :straight_ruler: 表格模板 - vim-table-mode
@@ -314,7 +314,7 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
 
 <details>
   <summary><strong>Demo (click to expand)</strong></summary>
-  <img src="https://github.com/GIN-18/pictures/blob/master/readme-images/nvim/table-mode.gif?raw=true" alt="table-mode" />
+  <img src="https://github.com/gin-18/pictures/blob/master/readme/nvim/table-mode.gif?raw=true" alt="table-mode" />
 </details>
 
 ### :clipboard: 从剪贴板插入图片 - md-img-paste
@@ -331,5 +331,5 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
 
 <details>
   <summary><strong>Demo (click to expand)</strong></summary>
-  <img src="https://github.com/GIN-18/pictures/blob/master/readme-images/nvim/md-img-paste.gif?raw=true" alt="md-img-paste" />
+  <img src="https://github.com/gin-18/pictures/blob/master/readme/nvim/md-img-paste.gif?raw=true" alt="md-img-paste" />
 </details>
