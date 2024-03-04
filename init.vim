@@ -24,6 +24,11 @@ augroup fold_after_telescope
   autocmd!
   autocmd BufRead * autocmd BufWinEnter * ++once normal! zx
 augroup END
+" 设置ejs的文件类型为html
+augroup fold_after_telescope
+  autocmd!
+  autocmd BufNewFile,BufRead *.ejs set filetype=html
+augroup END
 
 " -----------------------------------------------------------------
 "                                                                 -

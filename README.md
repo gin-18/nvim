@@ -78,13 +78,9 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
 
 ### :necktie: 插件管理器 - lazy.nvim
 
----
-
 **插件管理器地址**：[folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 
 ### :wrench: lsp 支持 - nvim-lspconfig
-
----
 
 **插件地址**：[neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 
@@ -107,8 +103,6 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
 </details>
 
 ### :computer: 自动补全 - nvim-cmp
-
----
 
 **插件地址**：[hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 
@@ -139,8 +133,6 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
 
 ### :books: 代码片段 - luasnip
 
----
-
 **插件地址**：[L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip)
 
 在 `my-snippets/snippets` 目录下可以添加自定义的代码片段。
@@ -155,8 +147,6 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
 </details>
 
 ### :telescope: 模糊搜索 - telescope
-
----
 
 **插件地址**：[nvim-telescope/telescope.vim](https://github.com/nvim-telescope/telescope.nvim)
 
@@ -190,8 +180,6 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
 
 ### :file_folder: 文件管理器 - nvim-tree
 
----
-
 **插件地址**：[nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
 
 | 快捷键          | 描述             |
@@ -209,8 +197,6 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
 ## 5. git 支持
 
 ### :pushpin: 显示 git 标记 - gitsigns
-
----
 
 **插件地址**：[lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 
@@ -230,8 +216,6 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
 
 ### :koala: git 操作 - lazygit
 
----
-
 **插件地址**：[kdheepak/lazygit.nvim](https://github.com/kdheepak/lazygit.nvim)
 
 | 快捷键          | 描述           |
@@ -249,8 +233,6 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
 ## 6. Markdown 支持
 
 ### :pencil: 快速输入
-
----
 
 在 `插入模式(insert-mode)` 下，`markdown` 文件中输入：
 
@@ -282,8 +264,6 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
 
 ### :eyes: Markdown 预览 - markdown-preview
 
----
-
 **插件地址**：[iamcco/markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)
 
 | 快捷键      | 描述       |
@@ -301,8 +281,6 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
 
 ### :straight_ruler: 表格模板 - vim-table-mode
 
----
-
 **插件地址**：[dhruvasagar/vim-table-mode](https://github.com/dhruvasagar/vim-table-mode)
 
 | 快捷键            | 描述             |
@@ -318,8 +296,6 @@ git clone https://github.com/GIN-18/nvim.git ~/.config/nvim
 </details>
 
 ### :clipboard: 从剪贴板插入图片 - md-img-paste
-
----
 
 **插件地址**：[ferrine/md-img-paste.vim](https://github.com/ferrine/md-img-paste.vim)
 

@@ -1,5 +1,5 @@
-require("catppuccin").setup({
-  flavour = "frappe",
+require('catppuccin').setup({
+  flavour = 'mocha',
   no_italic = true,
   highlight_overrides = {
     all = function (colors)
@@ -10,4 +10,4 @@ require("catppuccin").setup({
   }
 })
 
-vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme 'catppuccin'
