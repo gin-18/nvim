@@ -1,14 +1,6 @@
-local status_ok, cmp = pcall(require, "cmp")
-if not status_ok then
-  vim.notify("cmp not found!")
-  return
-end
-
-local status_ok, luasnip = pcall(require, "luasnip")
-if not status_ok then
-  vim.notify("luasnip not found!")
-  return
-end
+local cmp = require('cmp')
+local luasnip = require('luasnip')
+local lspkind = require('lspkind')
 
 --- config for cmp-tabnine
 local tabnine = require("cmp_tabnine.config")
@@ -27,32 +19,14 @@ tabnine:setup({
   show_prediction_strength = false
 })
 
-local kind_icons = {
-  Text = "",
-  Method = "m",
-  Function = "",
-  Constructor = "",
-  Field = "",
-  Variable = "",
-  Class = "",
-  Interface = "",
-  Module = "",
-  Property = "",
-  Unit = "",
-  Value = "",
-  Enum = "",
-  Keyword = "",
-  Snippet = "",
-  Color = "",
-  File = "",
-  Reference = "",
-  Folder = "",
-  EnumMember = "",
-  Constant = "",
-  Struct = "",
-  Event = "",
-  Operator = "",
-  TypeParameter = "",
+
+local source_mapping = {
+  nvim_lsp = "[LSP]",
+  luasnip = "[Snippet]",
+  buffer = "[Buffer]",
+  treesitter = "[TreeSitter]",
+  path = "[Path]",
+  cmp_tabnine = "[TN]",
 }
 
 cmp.setup({
@@ -60,6 +34,14 @@ cmp.setup({
     expand = function(args)
       luasnip.lsp_expand(args.body)
     end
+  },
+  sources = {
+    { name = "nvim_lsp" },
+    { name = "luasnip" },
+    { name = "buffer" },
+    { name = "treesitter" },
+    { name = "path" },
+    { name = "cmp_tabnine" },
   },
   completion = {
     keyword_length = 1,
@@ -75,30 +57,23 @@ cmp.setup({
   formatting = {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
-      -- kind icons
-      vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-      vim_item.menu = ({
-        nvim_lsp = "[LSP]",
-        luasnip = "[Luasnip]",
-        buffer = "[Buffer]",
-        path = "[Path]",
-        treesitter = "[Treesitter]",
-        cmp_tabnine = "[Tabnine]",
-      })[entry.source.name]
-      -- set kind_icons for cmp_tabnine
-      if entry.source.name == "cmp_tabnine" and entry.completion_item.data ~=nil then
-        vim_item.kind = string.format("%s", "󰑫")
+      vim_item.kind = lspkind.symbolic(vim_item.kind, { mode = "symbol" })
+      vim_item.menu = source_mapping[entry.source.name]
+      if entry.source.name == "cmp_tabnine" then
+        local detail = (entry.completion_item.labelDetails or {}).detail
+        vim_item.kind = ''
+        if detail and detail:find('.*%%.*') then
+          vim_item.kind = vim_item.kind .. ' ' .. detail
+        end
+
+        if (entry.completion_item.data or {}).multiline then
+          vim_item.kind = vim_item.kind .. ' ' .. '[ML]'
+        end
       end
+      local maxwidth = 80
+   	 vim_item.abbr = string.sub(vim_item.abbr, 1, maxwidth)
       return vim_item
     end,
-  },
-  sources = {
-    { name = "nvim_lsp" },
-    { name = "luasnip" },
-    { name = "buffer" },
-    { name = "treesitter" },
-    { name = "path" },
-    { name = "cmp_tabnine" },
   },
   mapping = cmp.mapping.preset.insert {
     ["<C-p>"] = cmp.mapping.select_prev_item(),
