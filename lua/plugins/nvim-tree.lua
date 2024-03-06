@@ -43,8 +43,8 @@ nvim_tree.setup({
           unmerged = "",
           renamed = "﯀",
           deleted = "",
-          untracked = "ﲉ",
-          ignored = "",
+          untracked = "󱧈",
+          ignored = "",
         },
         folder = {
           default = "",
