@@ -12,7 +12,7 @@ mason_lspconfig.setup({
     "html",
     "cssls",
     "tsserver",
-    "vuels",
+    "volar",
     "jsonls",
     "emmet_ls",
     "tailwindcss",
