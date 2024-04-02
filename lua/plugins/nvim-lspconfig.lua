@@ -69,7 +69,7 @@ local servers = {
   "html",
   "cssls",
   "tsserver",
-  "vuels",
+  "volar",
   "jsonls",
   "emmet_ls",
   "tailwindcss",
@@ -89,6 +89,14 @@ require("lspconfig").lua_ls.setup({
       diagnostics = {
         globals = { "vim" }
       }
+    }
+  }
+})
+require("lspconfig").volar.setup({
+  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
+  init_options = {
+    typescript = {
+      tsdk = '/home/gin/.local/share/nvim/mason/packages/typescript-language-server/node_modules/typescript/lib'
     }
   }
 })
