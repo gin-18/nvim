@@ -1,13 +1,13 @@
-require('catppuccin').setup({
+require('catppuccin').setup {
   flavour = 'mocha',
   no_italic = true,
   highlight_overrides = {
-    all = function (colors)
+    all = function(colors)
       return {
         NormalFloat = { bg = colors.base },
       }
-    end
-  }
-})
+    end,
+  },
+}
 
 vim.cmd.colorscheme 'catppuccin'

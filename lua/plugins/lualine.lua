@@ -1,17 +1,17 @@
-local status_ok, lualine = pcall(require, "lualine")
+local status_ok, lualine = pcall(require, 'lualine')
 if not status_ok then
-  vim.notify("lualine not found!")
+  vim.notify 'lualine not found!'
   return
 end
 
-lualine.setup({
+lualine.setup {
   options = {
     icons_enabled = true,
-    theme = "auto",
+    theme = 'auto',
     -- component_separators = { left = "", right = ""},
     -- section_separators = { left = "", right = "" },
-    component_separators = { right = "" },
-    section_separators = "",
+    component_separators = { right = '' },
+    section_separators = '',
     disabled_filetypes = {
       statusline = {},
       winbar = {},
@@ -23,38 +23,38 @@ lualine.setup({
       statusline = 1000,
       tabline = 1000,
       winbar = 1000,
-    }
+    },
   },
   sections = {
-    lualine_a = { "mode" },
+    lualine_a = { 'mode' },
     lualine_b = {
-      "branch",
-      "diff",
+      'branch',
+      'diff',
       {
-        "diagnostics",
+        'diagnostics',
         symbols = {
-          error = " ",
-          warn = " ",
-          hint = " ",
-          info = " "
+          error = ' ',
+          warn = ' ',
+          hint = ' ',
+          info = ' ',
         },
-      }
+      },
     },
-    lualine_c = { "filename" },
-    lualine_x = { "encoding", "fileformat", "filetype" },
-    lualine_y = { "progress" },
-    lualine_z = { "location" }
+    lualine_c = { 'filename' },
+    lualine_x = { 'encoding', 'fileformat', 'filetype' },
+    lualine_y = { 'progress' },
+    lualine_z = { 'location' },
   },
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = { "filename" },
-    lualine_x = { "location" },
+    lualine_c = { 'filename' },
+    lualine_x = { 'location' },
     lualine_y = {},
-    lualine_z = {}
+    lualine_z = {},
   },
   tabline = {},
   winbar = {},
   inactive_winbar = {},
-  extensions = {}
-})
+  extensions = {},
+}

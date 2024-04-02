@@ -1,6 +1,6 @@
-local status_ok, nvim_treesitter = pcall(require, "nvim-treesitter.configs")
+local status_ok, nvim_treesitter = pcall(require, 'nvim-treesitter.configs')
 if not status_ok then
-  vim.notify("nvim-treesitter not found!")
+  vim.notify 'nvim-treesitter not found!'
   return
 end
 
@@ -9,35 +9,35 @@ end
 --   config.install_info.url = config.install_info.url:gsub("https://github.com/", "https://ghproxy.com/https://github.com/")
 -- end
 
-nvim_treesitter.setup({
+nvim_treesitter.setup {
   ensure_installed = {
-    "c",
-    "html",
-    "css",
-    "vue",
-    "lua",
-    "javascript",
-    "typescript",
-    "python"
+    'c',
+    'html',
+    'css',
+    'vue',
+    'lua',
+    'javascript',
+    'typescript',
+    'python',
   },
   highlight = {
     enable = true,
-    additional_vim_regex_highlighting = false
+    additional_vim_regex_highlighting = false,
   },
   indent = {
-    enable = true
+    enable = true,
   },
   context_commentstring = {
     enable = true,
-    enable_autocmd = false
+    enable_autocmd = false,
   },
   incremental_selection = {
     enable = true,
     keymaps = {
-      init_selection = "<CR>",
-      node_incremental = "<CR>",
-      node_decremental = "<BS>",
-      scope_incremental = "<TAB>",
-    }
-  }
-})
+      init_selection = '<CR>',
+      node_incremental = '<CR>',
+      node_decremental = '<BS>',
+      scope_incremental = '<TAB>',
+    },
+  },
+}

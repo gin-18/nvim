@@ -99,7 +99,7 @@ require('plugins.indent-blankline')
 require('plugins.nvim-lspconfig')
 require('plugins.mason')
 require('plugins.mason-lspconfig')
-require('plugins.null-ls')
+require('plugins.conform')
 
 -- complement
 require('plugins.nvim-cmp')

@@ -1,13 +1,13 @@
-local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
+  vim.fn.system {
     'git',
     'clone',
     '--filter=blob:none',
     'https://ghproxy.com/https://github.com/folke/lazy.nvim.git',
     '--branch=stable',
     lazypath,
-  })
+  }
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -60,7 +60,8 @@ local plugins = {
   {
     'neovim/nvim-lspconfig',
     event = {
-      'BufReadPre', 'BufNewFile',
+      'BufReadPre',
+      'BufNewFile',
     },
   },
   {
@@ -68,13 +69,7 @@ local plugins = {
     cmd = 'Mason',
   },
   { 'williamboman/mason-lspconfig.nvim' },
-  {
-    'jose-elias-alvarez/null-ls.nvim',
-    event = {
-      'BufReadPre',
-      'BufNewFile',
-    },
-  },
+  { 'stevearc/conform.nvim' },
 
   -- complement
   { 'hrsh7th/nvim-cmp' },
@@ -84,7 +79,7 @@ local plugins = {
   { 'hrsh7th/cmp-cmdline' },
   {
     'tzachar/cmp-tabnine',
-     build = './install.sh',
+    build = './install.sh',
   },
   { 'onsails/lspkind.nvim' },
 
@@ -134,7 +129,7 @@ local plugins = {
   -- utils
   {
     'Exafunction/codeium.vim',
-    event = 'BufEnter'
+    event = 'BufEnter',
   },
   {
     'windwp/nvim-autopairs',

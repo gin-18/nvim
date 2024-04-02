@@ -6,6 +6,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 :root {
   --color-text-primary: #333;
 }
+
 [data-theme="dark"] {
   --color-text-primary: #c9d1d9;
 }

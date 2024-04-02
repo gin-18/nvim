@@ -5,7 +5,7 @@ opt.shiftwidth = 2
 opt.softtabstop = 2
 
 opt.scrolloff = 18
-opt.encoding = "utf-8"
+opt.encoding = 'utf-8'
 
 opt.autoindent = true
 opt.smartindent = true
@@ -28,27 +28,27 @@ opt.showcmd = true
 opt.autoread = true
 opt.swapfile = false
 
-opt.mouse = ""
-opt.signcolumn = "yes"
-opt.shortmess = "atI"
+opt.mouse = ''
+opt.signcolumn = 'yes'
+opt.shortmess = 'atI'
 opt.updatetime = 300
 opt.redrawtime = 1500
 opt.timeoutlen = 500
 
 -- folding
 opt.foldenable = false
-opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldmethod = 'expr'
+opt.foldexpr = 'nvim_treesitter#foldexpr()'
 opt.foldlevel = 99
 
 -- list char
 opt.list = true
 opt.listchars = {
   -- tab = "",
-  trail = "",
-  extends = "»",
-  precedes = "«",
-  nbsp = "×",
+  trail = '',
+  extends = '»',
+  precedes = '«',
+  nbsp = '×',
 }
 
 -- backup

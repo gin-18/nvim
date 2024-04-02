@@ -1,57 +1,57 @@
-local status_ok, nvim_tree = pcall(require, "nvim-tree")
+local status_ok, nvim_tree = pcall(require, 'nvim-tree')
 if not status_ok then
-  vim.notify("nvim-tree not found!")
+  vim.notify 'nvim-tree not found!'
   return
 end
 
-nvim_tree.setup({
+nvim_tree.setup {
   auto_reload_on_write = true,
   disable_netrw = false,
   hijack_cursor = false,
   hijack_netrw = true,
   hijack_unnamed_buffer_when_opening = false,
   open_on_tab = false,
-  sort_by = "name",
+  sort_by = 'name',
   view = {
     width = 30,
-    side = "left",
+    side = 'left',
     preserve_window_proportions = false,
     number = false,
     relativenumber = false,
-    signcolumn = "yes",
+    signcolumn = 'yes',
   },
   renderer = {
     indent_markers = {
       enable = true,
       icons = {
-        corner = "└",
-        edge = "│",
-        item = "│",
-        bottom = "─",
-        none = " ",
+        corner = '└',
+        edge = '│',
+        item = '│',
+        bottom = '─',
+        none = ' ',
       },
     },
     icons = {
       webdev_colors = true,
-      git_placement = "before",
+      git_placement = 'before',
       glyphs = {
-        default = "",
-        symlink = "",
+        default = '',
+        symlink = '',
         git = {
-          unstaged = "",
-          staged = "",
-          unmerged = "",
-          renamed = "﯀",
-          deleted = "",
-          untracked = "󱧈",
-          ignored = "",
+          unstaged = '',
+          staged = '',
+          unmerged = '',
+          renamed = '﯀',
+          deleted = '',
+          untracked = '󱧈',
+          ignored = '',
         },
         folder = {
-          default = "",
-          open = "",
-          empty = "",
-          empty_open = "",
-          symlink = "",
+          default = '',
+          open = '',
+          empty = '',
+          empty_open = '',
+          symlink = '',
         },
       },
       show = {
@@ -75,17 +75,17 @@ nvim_tree.setup({
     ignore_list = {},
   },
   system_open = {
-    cmd = "",
+    cmd = '',
     args = {},
   },
   diagnostics = {
     enable = true,
     show_on_dirs = true,
     icons = {
-      error = "",
-      warning = "",
-      hint = "",
-      info = ""
+      error = '',
+      warning = '',
+      hint = '',
+      info = '',
     },
   },
   filters = {
@@ -110,16 +110,16 @@ nvim_tree.setup({
       resize_window = true,
       window_picker = {
         enable = true,
-        chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+        chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890',
         exclude = {
-          filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
-          buftype = { "nofile", "terminal", "help" },
+          filetype = { 'notify', 'packer', 'qf', 'diff', 'fugitive', 'fugitiveblame' },
+          buftype = { 'nofile', 'terminal', 'help' },
         },
       },
     },
   },
   trash = {
-    cmd = "trash",
+    cmd = 'trash',
     require_confirm = true,
   },
   log = {
@@ -134,4 +134,4 @@ nvim_tree.setup({
       profile = false,
     },
   },
-})
+}
