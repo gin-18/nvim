@@ -6,9 +6,6 @@ end
 
 -- diagnostic
 vim.diagnostic.config {
-  -- virtual_text = {
-  --   prefix = "",
-  -- },
   virtual_text = false,
   signs = true,
   underline = true,
@@ -87,7 +84,7 @@ for _, lsp in ipairs(servers) do
 end
 
 -- lspconfig for each
-require('lspconfig').lua_ls.setup {
+lspconfig.lua_ls.setup {
   settings = {
     Lua = {
       diagnostics = {
@@ -97,10 +94,10 @@ require('lspconfig').lua_ls.setup {
   },
 }
 require('lspconfig').volar.setup {
-  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
-  init_options = {
-    typescript = {
-      tsdk = '/home/gin/.local/share/nvim/mason/packages/typescript-language-server/node_modules/typescript/lib',
-    },
-  },
+  filetypes = { 'javascript', 'javascriptreact', 'vue', 'json' },
+  -- init_options = {
+  --   typescript = {
+  --     tsdk = '/home/gin/.local/share/nvim/mason/packages/typescript-language-server/node_modules/typescript/lib',
+  --   },
+  -- },
 }

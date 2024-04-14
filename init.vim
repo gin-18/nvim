@@ -63,20 +63,6 @@ let g:mdip_imgdir = 'images'
 
 autocmd FileType markdown nmap <buffer><silent> <SPACE>pi :call mdip#MarkdownClipboardImage()<CR>
 
-" filetype-open
-nnoremap R <Cmd>call <SID>FileTypeOpen()<CR>
-
-func! s:FileTypeOpen()
-  exec "w"
-  if &filetype == 'python'
-    :!time python3 %
-  elseif &filetype == 'javascript'
-    :!time node %
-  elseif &filetype == 'markdown'
-    silent! exec "MarkdownPreview"
-  endif
-endfunc
-
 " -----------------------------------------------------------------
 "                                                                 -
 " load plugin config in lua/plugins                               -
@@ -87,9 +73,9 @@ require('core.disabled')
 require('core.options')
 require('core.keymaps')
 require('core.lazy')
+require('core.colorscheme')
 
 -- ui
-require('core.colorscheme')
 require('plugins.alpha-nvim')
 require('plugins.lualine')
 require('plugins.nvim-treesitter')

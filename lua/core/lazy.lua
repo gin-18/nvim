@@ -24,13 +24,9 @@ local plugins = {
 
   -- ui
   {
-    'andersevenrud/nordic.nvim',
-    lazy = true,
-  },
-  {
     'catppuccin/nvim',
     name = 'catppuccin',
-    lazy = true,
+    priority = 1000,
   },
   {
     'nvim-treesitter/nvim-treesitter',
