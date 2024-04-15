@@ -1,8 +1,4 @@
-local status_ok, lspconfig = pcall(require, 'lspconfig')
-if not status_ok then
-  vim.notify 'lspconfig not found!'
-  return
-end
+local lspconfig = require 'lspconfig'
 
 -- diagnostic
 vim.diagnostic.config {
@@ -84,7 +80,7 @@ for _, lsp in ipairs(servers) do
 end
 
 -- lspconfig for each
-lspconfig.lua_ls.setup {
+require('lspconfig').lua_ls.setup {
   settings = {
     Lua = {
       diagnostics = {
@@ -95,9 +91,9 @@ lspconfig.lua_ls.setup {
 }
 require('lspconfig').volar.setup {
   filetypes = { 'javascript', 'javascriptreact', 'vue', 'json' },
-  -- init_options = {
-  --   typescript = {
-  --     tsdk = '/home/gin/.local/share/nvim/mason/packages/typescript-language-server/node_modules/typescript/lib',
-  --   },
-  -- },
+  init_options = {
+    typescript = {
+      tsdk = '/home/gin/.local/share/nvim/mason/packages/typescript-language-server/node_modules/typescript/lib',
+    },
+  },
 }

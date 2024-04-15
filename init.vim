@@ -70,44 +70,7 @@ autocmd FileType markdown nmap <buffer><silent> <SPACE>pi :call mdip#MarkdownCli
 " -----------------------------------------------------------------
 lua << EOF
 require('core.disabled')
-require('core.options')
 require('core.keymaps')
+require('core.options')
 require('core.lazy')
-require('core.colorscheme')
-
--- ui
-require('plugins.alpha-nvim')
-require('plugins.lualine')
-require('plugins.nvim-treesitter')
-require('plugins.indent-blankline')
-
--- lsp
-require('plugins.nvim-lspconfig')
-require('plugins.mason')
-require('plugins.mason-lspconfig')
-require('plugins.conform')
-
--- complement
-require('plugins.nvim-cmp')
-require('plugins.luasnip')
-
--- files finder
-require('plugins.telescope')
-
--- explorer
-require('plugins.nvim-tree')
-
--- git
-require('plugins.lazygit')
-require('plugins.gitsigns')
-
--- front end
-require('plugins.nvim-ts-autotag')
-require('plugins.nvim-colorizer')
-
--- utils
-require('plugins.project')
-require('plugins.comment')
-require('plugins.todo-comments')
-require('plugins.nvim-autopairs')
 EOF
