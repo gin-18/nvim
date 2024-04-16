@@ -24,8 +24,10 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
-    cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
+    event = 'VeryLazy',
     opts = {
+      highlight = { enable = true },
+      indent = { enable = true },
       ensure_installed = {
         'c',
         'lua',
@@ -39,6 +41,9 @@ return {
         'vue',
       },
     },
+    config = function(_, opts)
+      require('nvim-treesitter.configs').setup(opts)
+    end,
   },
 
   -- formatting

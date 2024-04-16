@@ -17,7 +17,6 @@ return {
           },
         },
       },
-
     },
     opts = {
       automatic_installation = true,
@@ -80,7 +79,6 @@ return {
         'vimls',
         'html',
         'cssls',
-        'tsserver',
         'jsonls',
         'tailwindcss',
       }
@@ -101,7 +99,12 @@ return {
           },
         },
       }
+      lspconfig.tsserver.setup {
+        capabilities = capabilities,
+        filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+      }
       lspconfig.volar.setup {
+        capabilities = capabilities,
         filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
         init_options = {
           typescript = {
