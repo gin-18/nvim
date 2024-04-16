@@ -81,7 +81,6 @@ return {
         'html',
         'cssls',
         'tsserver',
-        'volar',
         'jsonls',
         'tailwindcss',
       }
@@ -102,14 +101,14 @@ return {
           },
         },
       }
-      -- lspconfig.volar.setup {
-      --   filetypes = { 'typescript', 'javascript', 'javascriptreact', 'vue', 'json' },
-      --   init_options = {
-      --     typescript = {
-      --       tsdk = '/home/gin/.local/share/nvim/mason/packages/typescript-language-server/node_modules/typescript/lib',
-      --     },
-      --   },
-      -- }
+      lspconfig.volar.setup {
+        filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
+        init_options = {
+          typescript = {
+            tsdk = '/home/gin/.local/share/nvim/mason/packages/typescript-language-server/node_modules/typescript/lib',
+          },
+        },
+      }
     end,
   },
 }

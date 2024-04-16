@@ -24,11 +24,14 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
-    event = 'VeryLazy',
+    cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
     opts = {
       ensure_installed = {
         'c',
         'lua',
+        'vim',
+        'bash',
+        'json',
         'python',
         'html',
         'css',
@@ -56,7 +59,6 @@ return {
   },
 
   -- comment
-  -- TODO: visual toggle comment
   {
     'folke/todo-comments.nvim',
     cmd = { 'TodoTrouble', 'TodoTelescope' },
