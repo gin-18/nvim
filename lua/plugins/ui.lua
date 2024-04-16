@@ -71,8 +71,8 @@ return {
   -- statusline
   {
     'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
     event = 'VeryLazy',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = {
       options = {
         component_separators = { right = '|' },
@@ -102,6 +102,6 @@ return {
     event = 'BufEnter',
     config = function()
       require('ibl').setup {}
-    end
+    end,
   },
 }

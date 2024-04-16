@@ -37,8 +37,6 @@ return {
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
       local lspkind = require 'lspkind'
-
-      --- config for cmp-tabnine
       local tabnine = require 'cmp_tabnine.config'
 
       tabnine:setup {
