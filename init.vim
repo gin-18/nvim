@@ -70,7 +70,7 @@ autocmd FileType markdown nmap <buffer><silent> <SPACE>pi :call mdip#MarkdownCli
 " -----------------------------------------------------------------
 lua << EOF
 require('core.disabled')
-require('core.keymaps')
 require('core.options')
+require('core.keymaps')
 require('core.lazy')
 EOF

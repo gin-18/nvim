@@ -1,88 +1,8 @@
 return {
-  -- lsp installation
-  {
-    'williamboman/mason.nvim',
-    cmd = 'Mason',
-    opts = {
-      ui = {
-        width = 0.8,
-        height = 0.7,
-        icons = {
-          package_installed = '󰺧',
-          package_pending = '',
-          package_uninstalled = '󰺭',
-        },
-      },
-    },
-  },
-  {
-    'williamboman/mason-lspconfig.nvim',
-    event = 'VeryLazy',
-    opts = {
-      ensure_installed = {
-        'clangd',
-        'vimls',
-        'lua_ls',
-        'html',
-        'cssls',
-        'tsserver',
-        'volar',
-        'jsonls',
-        'tailwindcss',
-      },
-      automatic_installation = false,
-    },
-  },
-
-  -- lsp
-  {
-    'neovim/nvim-lspconfig',
-    event = {
-      'BufReadPre',
-      'BufNewFile',
-    },
-    config = function()
-      require 'plugins.config.lsp'
-    end,
-  },
-
-  -- snippet
-  { 'saadparwaiz1/cmp_luasnip' },
-  { 'rafamadriz/friendly-snippets' },
-  {
-    'L3MON4D3/LuaSnip',
-    version = '<CurrentMajor>.*',
-    build = 'make install_jsregexp',
-    event = 'VeryLazy',
-    config = function()
-      require('luasnip.loaders.from_vscode').lazy_load()
-      require('luasnip.loaders.from_vscode').load {
-        paths = { './my-snippets' },
-      }
-    end,
-  },
-
   -- ai
   {
     'Exafunction/codeium.vim',
     event = 'BufEnter',
-  },
-
-  -- completion
-  { 'hrsh7th/cmp-nvim-lsp' },
-  { 'hrsh7th/cmp-path' },
-  { 'hrsh7th/cmp-buffer' },
-  { 'hrsh7th/cmp-cmdline' },
-  { 'onsails/lspkind.nvim' },
-  {
-    'tzachar/cmp-tabnine',
-    build = './install.sh',
-  },
-  {
-    'hrsh7th/nvim-cmp',
-    config = function()
-      require 'plugins.config.completion'
-    end,
   },
 
   -- git
@@ -92,10 +12,7 @@ return {
   },
   {
     'lewis6991/gitsigns.nvim',
-    event = {
-      'BufReadPre',
-      'BufNewFile',
-    },
+    event = 'VeryLazy',
     opts = {
       preview_config = {
         border = 'rounded',
@@ -107,10 +24,7 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
-    event = {
-      'BufReadPost',
-      'BufNewFile',
-    },
+    event = 'VeryLazy',
     opts = {
       ensure_installed = {
         'c',
@@ -119,7 +33,6 @@ return {
         'html',
         'css',
         'javascript',
-        'typescript',
         'vue',
       },
     },
@@ -146,26 +59,16 @@ return {
   -- TODO: visual toggle comment
   {
     'folke/todo-comments.nvim',
-    cmd = {
-      'TodoTrouble',
-      'TodoTelescope',
-    },
-    event = {
-      'BufReadPost',
-      'BufNewFile',
-    },
+    cmd = { 'TodoTrouble', 'TodoTelescope' },
+    event = 'VeryLazy',
     config = true,
   },
   {
     'numToStr/Comment.nvim',
     keys = '<SPACE>cc',
     opts = {
-      toggler = {
-        line = '<SPACE>cc',
-      },
-      opleader = {
-        line = '<SPACE>cc',
-      },
+      toggler = { line = '<SPACE>cc' },
+      opleader = { line = '<SPACE>cc' },
     },
   },
 

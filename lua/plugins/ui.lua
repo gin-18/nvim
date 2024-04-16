@@ -13,7 +13,7 @@ return {
       highlight_overrides = {
         all = function(colors)
           return {
-            NormalFloat = { bg = colors.crust },
+            NormalFloat = { bg = colors.base },
           }
         end,
       },
@@ -99,12 +99,9 @@ return {
   -- indent line
   {
     'lukas-reineke/indent-blankline.nvim',
-    event = {
-      'BufReadPost',
-      'BufNewFile',
-    },
+    event = 'BufEnter',
     config = function()
       require('ibl').setup {}
-    end,
+    end
   },
 }
