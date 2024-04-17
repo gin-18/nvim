@@ -1,4 +1,4 @@
-# neovim 配置
+# Neovim 配置
 
 <img src="https://github.com/gin-18/pictures/blob/master/readme/nvim/nvim.png?raw=true" alt="nvim" />
 
@@ -7,11 +7,6 @@
 使用配置之前确保安装了以下软件包。
 
 ```
-1. nodejs
-2. npm
-3. yarn
-4. python3
-5. pip
 6. nerd-fonts
 7. fzf
 8. xclip
@@ -23,23 +18,9 @@
 ### Arch Linux 使用 pacman 和 yay 安装依赖
 
 ```sh
-sudo pacman -S nodejs npm yarn python3 python-pip fzf ripgrep xclip
+sudo pacman -S fzf ripgrep xclip
 
 yay -S nerd-fonts-fira-code
-```
-
-### npm 安装 neovim
-
-```sh
-sudo npm install -g neovim
-```
-
-### pip 安装 pynvim
-
-```sh
-pip3 install --user pynvim
-
-pip install --user pynvim
 ```
 
 ## 2. 使用本配置

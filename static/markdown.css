@@ -3,8 +3,14 @@
 * https://github.com/iamcco/markdown.css/blob/master/dest/github/markdown.css
 */
 
+main {
+  background-color: var(--color-bg-secondary);
+}
+
 #page-header {
-  display: none;
+  border: 1px solid var(--color-border-primary);
+  border-bottom: 0;
+  background-color: var(--color-bg-primary);
 }
 
 svg {
@@ -18,40 +24,37 @@ svg {
 }
 
 :root {
-  --color-text-primary: #333;
-  --color-text-tertiary: #777;
-  --color-text-link: #4078c0;
-  --color-bg-primary: #fff;
-  --color-bg-secondary: #fafbfc;
-  --color-bg-tertiary: #f8f8f8;
-  --color-border-primary: #ddd;
-  --color-border-secondary: #eaecef;
-  --color-border-tertiary: #d1d5da;
-  --color-kbd-foreground: #444d56;
-  --color-markdown-blockquote-border: #dfe2e5;
-  --color-markdown-table-border: #dfe2e5;
-  --color-markdown-table-tr-border: #c6cbd1;
-  --color-markdown-code-bg: #1b1f230d;
+  --color-text-primary: #4c4f69;
+  --color-text-tertiary: #5c5f77;
+  --color-text-link: #1e66f5;
+  --color-bg-primary: #eff1f5;
+  --color-bg-secondary: #e6e9ef;
+  --color-bg-tertiary: #dce0e8;
+  --color-border-primary: #7c7f93;
+  --color-border-secondary: #8c8fa1;
+  --color-border-tertiary: #9ca0b0;
+  --color-kbd-foreground: #ccd0da;
+  --color-markdown-blockquote-border: #bcc0cc;
+  --color-markdown-table-border: #acb0be;
+  --color-markdown-table-tr-border: #acb0be;
+  --color-markdown-code-bg: #ccd0da;
 }
 
 [data-theme="dark"] {
-  --color-text-primary: #d8dee9;
-  --color-text-tertiary: #e5e9f0;
-  --color-text-link: #88c0d0;
-  /*--color-bg-primary: #3b4252;*/
-  --color-bg-primary: #2e3440;
-  --color-bg-secondary: #3b4252;
-  /*--color-bg-tertiary: #434c5e;*/
-  --color-bg-tertiary: #3b4252;
-  --color-border-primary: #4c566a;
-  --color-border-secondary: #21262d;
-  --color-border-tertiary: #6e7681;
-  --color-kbd-foreground: #b1bac4;
-  --color-markdown-blockquote-border: #3b434b;
-  --color-markdown-table-border: #d8dee9;
-  --color-markdown-table-tr-border: #d8dee9;
-  --color-markdown-code-bg: #4c566a;
-  --secondary-background-color: #2e3440;
+  --color-text-primary: #cdd6f4;
+  --color-text-tertiary: #bac2de;
+  --color-text-link: #89b4fa;
+  --color-bg-primary: #1e1e2e;
+  --color-bg-secondary: #181825;
+  --color-bg-tertiary: #11111b;
+  --color-border-primary: #313244;
+  --color-border-secondary: #45475a;
+  --color-border-tertiary: #585b70;
+  --color-kbd-foreground: #313244;
+  --color-markdown-blockquote-border: #45475a;
+  --color-markdown-table-border: #585b70;
+  --color-markdown-table-tr-border: #585b70;
+  --color-markdown-code-bg: #313244;
 }
 
 .markdown-body ol ol,
@@ -76,7 +79,6 @@ svg {
   padding: 45px;
   background: var(--color-bg-primary);
   border: 1px solid var(--color-border-primary);
-  /*border: 1px solid var(--color-bg-primary);*/
   -webkit-border-radius: 0 0 3px 3px;
   border-radius: 0 0 3px 3px;
 }
@@ -150,14 +152,14 @@ svg {
   padding-bottom: 0.3em;
   font-size: 2.25em;
   line-height: 1.2;
-  /*border-bottom: 1px solid var(--color-border-secondary);*/
+  border-bottom: 1px solid var(--color-border-secondary);
 }
 
 .markdown-body h2 {
   padding-bottom: 0.3em;
   font-size: 1.75em;
   line-height: 1.225;
-  /*border-bottom: 1px solid var(--color-border-secondary);*/
+  border-bottom: 1px solid var(--color-border-secondary);
 }
 
 .markdown-body h3 {
@@ -253,8 +255,12 @@ svg {
   border-top: 1px solid var(--color-markdown-table-tr-border);
 }
 
-.markdown-body table tr:nth-child(2n) {
-  background-color: var(--color-bg-tertiary);
+.markdown-body table th {
+  background-color: var(--color-bg-primary);
+}
+
+.markdown-body table tr:nth-child(odd) {
+  background-color: var(--color-bg-secondary);
 }
 
 .markdown-body table th,
