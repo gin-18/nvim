@@ -7,4 +7,14 @@ M.diagnostic_icons = {
   info = ' ',
 }
 
+M.alpha_icons = {
+  new_file = ' ',
+  search = ' ',
+  explorer = ' ',
+  plugin_manager = '󰒲 ',
+  setting = ' ',
+  quit = '󰩈 ',
+  loaded = '󱓟 ',
+}
+
 return M
