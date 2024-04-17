@@ -1,3 +1,5 @@
+local icons = require('plugins.config.icons').diagnostic_icons
+
 return {
   -- colorscheme
   {
@@ -85,10 +87,10 @@ return {
           {
             'diagnostics',
             symbols = {
-              error = ' ',
-              warn = ' ',
-              hint = ' ',
-              info = ' ',
+              error = icons.error,
+              warn = icons.warn,
+              hint = icons.hint,
+              info = icons.info,
             },
           },
         },

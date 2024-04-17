@@ -6,6 +6,8 @@ return {
     version = '*',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
+      local icons = require('plugins.config.icons').diagnostic_icons
+
       require('nvim-tree').setup {
         auto_reload_on_write = true,
         disable_netrw = false,
@@ -84,10 +86,10 @@ return {
           enable = true,
           show_on_dirs = true,
           icons = {
-            error = '',
-            warning = '',
-            hint = '',
-            info = '',
+            error = icons.error,
+            warning = icons.warn,
+            hint = icons.hint,
+            info = icons.info,
           },
         },
         filters = {
