@@ -88,6 +88,7 @@ return {
         }
       end
 
+      -- lua
       lspconfig.lua_ls.setup {
         capabilities = capabilities,
         settings = {
@@ -123,6 +124,7 @@ return {
         },
       }
       lspconfig.volar.setup {
+        capabilities = capabilities,
         init_options = {
           typescript = {
             tsdk = typescript_language_server_path,

@@ -17,6 +17,31 @@ return {
         },
       },
     },
+    keys = {
+      {
+        '<C-j>',
+        function()
+          return require('luasnip').jumpable(1) and '<Plug>luasnip-jump-next' or '<space>'
+        end,
+        expr = true,
+        silent = true,
+        mode = 'i',
+      },
+      {
+        '<C-j>',
+        function()
+          require('luasnip').jump(1)
+        end,
+        mode = 's',
+      },
+      {
+        '<C-k>',
+        function()
+          require('luasnip').jump(-1)
+        end,
+        mode = { 'i', 's' },
+      },
+    },
   },
 
   -- completion
@@ -76,13 +101,6 @@ return {
           { name = 'path' },
           { name = 'cmp_tabnine' },
         },
-        completion = {
-          keyword_length = 1,
-        },
-        experimental = {
-          ghost_text = true,
-          native_menu = false,
-        },
         window = {
           completion = cmp.config.window.bordered(),
           documentation = cmp.config.window.bordered(),
@@ -111,30 +129,12 @@ return {
         mapping = cmp.mapping.preset.insert {
           ['<C-p>'] = cmp.mapping.select_prev_item(),
           ['<C-n>'] = cmp.mapping.select_next_item(),
+          ['<C-l>'] = cmp.mapping.complete(),
+          ['<C-e>'] = cmp.mapping.abort(),
           ['<CR>'] = cmp.mapping.confirm {
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
           },
-          ['<C-j>'] = cmp.mapping(function(fallback)
-            if luasnip.expand_or_jumpable() then
-              luasnip.expand_or_jump()
-            elseif cmp.visible() then
-              cmp.select_next_item()
-            elseif has_words_before() then
-              cmp.complete()
-            else
-              fallback()
-            end
-          end, { 'i', 's' }),
-          ['<C-k>'] = cmp.mapping(function(fallback)
-            if luasnip.jumpable(-1) then
-              luasnip.jump(-1)
-            elseif cmp.visible() then
-              cmp.select_prev_item()
-            else
-              fallback()
-            end
-          end, { 'i', 's' }),
         },
       }
       cmp.setup.cmdline({ '/', '?' }, {
