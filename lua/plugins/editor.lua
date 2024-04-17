@@ -9,20 +9,9 @@ return {
       local icons = require('plugins.config.icons').diagnostic_icons
 
       require('nvim-tree').setup {
-        auto_reload_on_write = true,
-        disable_netrw = false,
-        hijack_cursor = false,
-        hijack_netrw = true,
-        hijack_unnamed_buffer_when_opening = false,
-        open_on_tab = false,
-        sort_by = 'name',
         view = {
           width = 30,
           side = 'left',
-          preserve_window_proportions = false,
-          number = false,
-          relativenumber = false,
-          signcolumn = 'yes',
         },
         renderer = {
           indent_markers = {
@@ -58,29 +47,7 @@ return {
                 symlink = '',
               },
             },
-            show = {
-              git = true,
-              folder = true,
-              file = true,
-              folder_arrow = true,
-            },
           },
-        },
-        hijack_directories = {
-          enable = true,
-          auto_open = true,
-        },
-        sync_root_with_cwd = true,
-        respect_buf_cwd = true,
-        update_focused_file = {
-          enable = true,
-          update_cwd = true,
-          update_root = true,
-          ignore_list = {},
-        },
-        system_open = {
-          cmd = '',
-          args = {},
         },
         diagnostics = {
           enable = true,
@@ -92,18 +59,7 @@ return {
             info = icons.info,
           },
         },
-        filters = {
-          dotfiles = false,
-          custom = {},
-          exclude = {},
-        },
-        git = {
-          enable = true,
-          ignore = false,
-          timeout = 500,
-        },
         actions = {
-          use_system_clipboard = true,
           change_dir = {
             enable = true,
             global = false,
@@ -122,40 +78,22 @@ return {
             },
           },
         },
-        trash = {
-          cmd = 'trash',
-          require_confirm = true,
-        },
-        log = {
-          enable = false,
-          truncate = false,
-          types = {
-            all = false,
-            config = false,
-            copy_paste = false,
-            diagnostics = false,
-            git = false,
-            profile = false,
-          },
-        },
       }
     end,
   },
 
   -- file finder
   {
-    'nvim-telescope/telescope-fzf-native.nvim',
-    build = 'make',
-    event = 'VeryLazy',
-  },
-  {
-    'ahmedkhalf/project.nvim',
-    event = 'VeryLazy',
-  },
-  {
     'nvim-telescope/telescope.nvim',
     cmd = 'Telescope',
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'ahmedkhalf/project.nvim',
+      {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        build = 'make',
+      },
+    },
     config = function()
       require('telescope').setup {
         defaults = {
