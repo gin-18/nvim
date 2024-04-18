@@ -38,8 +38,8 @@ return {
     'neovim/nvim-lspconfig',
     event = 'VeryLazy',
     dependencies = {
-      'folke/neodev.nvim',
-      opts = {},
+      { 'folke/neodev.nvim', opts = {} },
+      { 'j-hui/fidget.nvim', opts = {} },
     },
     config = function()
       local lspconfig = require 'lspconfig'
@@ -69,15 +69,64 @@ return {
           vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
           local opts = { buffer = ev.buf }
-          vim.keymap.set('n', '<space>gd', vim.lsp.buf.type_definition, opts)
+          vim.keymap.set('n', '<space>gk', vim.lsp.buf.hover, opts)
+          vim.keymap.set('n', '<space>gd', vim.lsp.buf.definition, opts)
           vim.keymap.set('n', '<space>gr', vim.lsp.buf.references, opts)
           vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
           vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
         end,
       })
 
+      -- float diagnostic under cursor
+      vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+        group = vim.api.nvim_create_augroup('float_diagnostic', { clear = true }),
+        callback = function()
+          vim.diagnostic.open_float(nil, { focus = false })
+        end,
+      })
+
       -- autocompletion
       local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+      -- on attch
+      local on_attach = function(client, bufnr)
+        -- float diagnostic under cursor
+        vim.api.nvim_create_autocmd('CursorHold', {
+          buffer = bufnr,
+          callback = function()
+            local opts = {
+              focusable = false,
+              close_events = { 'BufLeave', 'CursorMoved', 'InsertEnter', 'FocusLost' },
+              border = 'rounded',
+              source = 'always',
+              prefix = ' ',
+              scope = 'cursor',
+            }
+            vim.diagnostic.open_float(nil, opts)
+          end,
+        })
+
+        -- highlight symbol under cursor
+        if client.server_capabilities.documentHighlightProvider then
+          vim.api.nvim_create_augroup('lsp_document_highlight', {
+            clear = false,
+          })
+          vim.api.nvim_clear_autocmds {
+            buffer = bufnr,
+            group = 'lsp_document_highlight',
+          }
+          vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+            group = 'lsp_document_highlight',
+            buffer = bufnr,
+            callback = vim.lsp.buf.document_highlight,
+          })
+          vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
+            group = 'lsp_document_highlight',
+            buffer = bufnr,
+            callback = vim.lsp.buf.clear_references,
+          })
+        end
+      end
 
       local servers = {
         'clangd',
@@ -89,12 +138,14 @@ return {
       }
       for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup {
+          on_attach = on_attach,
           capabilities = capabilities,
         }
       end
 
       -- lua
       lspconfig.lua_ls.setup {
+        on_attach = on_attach,
         capabilities = capabilities,
         settings = {
           Lua = {
@@ -116,6 +167,7 @@ return {
         getServerPath('typescript-language-server', '/node_modules/typescript/lib')
 
       lspconfig.tsserver.setup {
+        on_attach = on_attach,
         capabilities = capabilities,
         filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
         init_options = {
@@ -129,6 +181,7 @@ return {
         },
       }
       lspconfig.volar.setup {
+        on_attach = on_attach,
         capabilities = capabilities,
         init_options = {
           typescript = {

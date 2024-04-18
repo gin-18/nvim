@@ -31,7 +31,7 @@ opt.swapfile = false
 opt.mouse = ''
 opt.signcolumn = 'yes'
 opt.shortmess = 'atI'
-opt.updatetime = 300
+opt.updatetime = 100
 opt.redrawtime = 1500
 opt.timeoutlen = 500
 
