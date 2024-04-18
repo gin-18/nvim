@@ -77,6 +77,13 @@ return {
         end,
       })
 
+      -- border for float win
+      require('lspconfig.ui.windows').default_options.border = 'rounded'
+      local handlers = {
+        ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' }),
+        ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' }),
+      }
+
       -- float diagnostic under cursor
       vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
         group = vim.api.nvim_create_augroup('float_diagnostic', { clear = true }),
@@ -146,6 +153,7 @@ return {
       -- lua
       lspconfig.lua_ls.setup {
         on_attach = on_attach,
+        handlers = handlers,
         capabilities = capabilities,
         settings = {
           Lua = {
