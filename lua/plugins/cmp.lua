@@ -45,6 +45,7 @@ return {
   },
 
   -- completion
+  -- TODO: setup for formatting
   {
     'hrsh7th/nvim-cmp',
     dependencies = {

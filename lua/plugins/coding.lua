@@ -53,8 +53,8 @@ return {
     opts = {
       formatters_by_ft = {
         lua = { 'stylua' },
-        javascript = { { 'prettierd', 'prettier' } },
-        vue = { { 'prettierd', 'prettier' } },
+        javascript = { 'prettierd' },
+        vue = { 'prettierd' },
       },
       format_on_save = {
         timeout_ms = 600,
@@ -72,7 +72,7 @@ return {
   },
   {
     'numToStr/Comment.nvim',
-    keys = '<SPACE>cc',
+    event = 'VeryLazy',
     opts = {
       toggler = { line = '<SPACE>cc' },
       opleader = { line = '<SPACE>cc' },

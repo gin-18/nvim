@@ -98,9 +98,11 @@ return {
   -- indent line
   {
     'lukas-reineke/indent-blankline.nvim',
-    event = 'BufEnter',
-    config = function()
-      require('ibl').setup {}
-    end,
+    main = 'ibl',
+    opts = {
+      indent = {
+        char = '▏',
+      },
+    },
   },
 }
