@@ -8,7 +8,7 @@ return {
     config = function()
       local icons = require('plugins.config.icons').diagnostic_icons
 
-      require('nvim-tree').setup {
+      require('nvim-tree').setup({
         view = {
           width = 30,
           side = 'left',
@@ -78,7 +78,7 @@ return {
             },
           },
         },
-      }
+      })
     end,
   },
 
@@ -95,7 +95,7 @@ return {
       },
     },
     config = function()
-      require('telescope').setup {
+      require('telescope').setup({
         defaults = {
           prompt_prefix = ' ',
           selection_caret = ' ',
@@ -135,9 +135,9 @@ return {
             case_mode = 'smart_case',
           },
         },
-      }
-      require('telescope').load_extension 'fzf'
-      require('telescope').load_extension 'projects'
+      })
+      require('telescope').load_extension('fzf')
+      require('telescope').load_extension('projects')
     end,
   },
 }

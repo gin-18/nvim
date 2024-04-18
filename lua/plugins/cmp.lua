@@ -12,7 +12,7 @@ return {
           'rafamadriz/friendly-snippets',
           config = function()
             require('luasnip.loaders.from_vscode').lazy_load()
-            require('luasnip.loaders.from_vscode').load { paths = { './my-snippets' } }
+            require('luasnip.loaders.from_vscode').load({ paths = { './my-snippets' } })
           end,
         },
       },
@@ -60,12 +60,12 @@ return {
       },
     },
     config = function()
-      local cmp = require 'cmp'
-      local luasnip = require 'luasnip'
-      local lspkind = require 'lspkind'
-      local tabnine = require 'cmp_tabnine.config'
+      local cmp = require('cmp')
+      local luasnip = require('luasnip')
+      local lspkind = require('lspkind')
+      local tabnine = require('cmp_tabnine.config')
 
-      tabnine:setup {
+      tabnine:setup({
         max_lines = 1000,
         max_num_results = 20,
         sort = true,
@@ -77,7 +77,7 @@ return {
           -- lua = true
         },
         show_prediction_strength = false,
-      }
+      })
 
       local source_mapping = {
         nvim_lsp = '[LSP]',
@@ -88,7 +88,7 @@ return {
         cmp_tabnine = '[TN]',
       }
 
-      cmp.setup {
+      cmp.setup({
         snippet = {
           expand = function(args)
             luasnip.lsp_expand(args.body)
@@ -114,7 +114,7 @@ return {
             if entry.source.name == 'cmp_tabnine' then
               local detail = (entry.completion_item.labelDetails or {}).detail
               vim_item.kind = ''
-              if detail and detail:find '.*%%.*' then
+              if detail and detail:find('.*%%.*') then
                 vim_item.kind = vim_item.kind .. ' ' .. detail
               end
 
@@ -127,17 +127,17 @@ return {
             return vim_item
           end,
         },
-        mapping = cmp.mapping.preset.insert {
+        mapping = cmp.mapping.preset.insert({
           ['<C-p>'] = cmp.mapping.select_prev_item(),
           ['<C-n>'] = cmp.mapping.select_next_item(),
           ['<C-l>'] = cmp.mapping.complete(),
           ['<C-e>'] = cmp.mapping.abort(),
-          ['<CR>'] = cmp.mapping.confirm {
+          ['<CR>'] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
-          },
-        },
-      }
+          }),
+        }),
+      })
       cmp.setup.cmdline({ '/', '?' }, {
         mapping = cmp.mapping.preset.cmdline(),
         sources = {
@@ -146,10 +146,10 @@ return {
       })
       cmp.setup.cmdline(':', {
         mapping = cmp.mapping.preset.cmdline(),
-        sources = cmp.config.sources {
+        sources = cmp.config.sources({
           { name = 'path' },
           { name = 'cmdline' },
-        },
+        }),
       })
     end,
   },

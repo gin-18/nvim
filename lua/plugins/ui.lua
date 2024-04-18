@@ -5,7 +5,7 @@ return {
     name = 'catppuccin',
     priority = 1000,
     init = function()
-      vim.cmd.colorscheme 'catppuccin'
+      vim.cmd.colorscheme('catppuccin')
     end,
     opts = {
       flavour = 'mocha',
@@ -25,8 +25,8 @@ return {
     'goolord/alpha-nvim',
     event = 'VimEnter',
     config = function()
-      local alpha = require 'alpha'
-      local dashboard = require 'alpha.themes.dashboard'
+      local alpha = require('alpha')
+      local dashboard = require('alpha.themes.dashboard')
       local icons = require('plugins.config.icons').alpha_icons
 
       dashboard.section.header.val = {
@@ -65,7 +65,7 @@ return {
 
       alpha.setup(dashboard.opts)
 
-      vim.cmd [[autocmd FileType alpha setlocal nofoldenable]]
+      vim.cmd([[autocmd FileType alpha setlocal nofoldenable]])
     end,
   },
 

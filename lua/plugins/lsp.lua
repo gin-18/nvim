@@ -42,14 +42,14 @@ return {
       { 'j-hui/fidget.nvim', opts = {} },
     },
     config = function()
-      local lspconfig = require 'lspconfig'
+      local lspconfig = require('lspconfig')
       local icons = require('plugins.config.icons').diagnostic_icons
 
       -- diagnostic
-      vim.diagnostic.config {
+      vim.diagnostic.config({
         virtual_text = false,
         float = { border = 'rounded' },
-      }
+      })
 
       -- set signs
       local signs = {
@@ -118,10 +118,10 @@ return {
           vim.api.nvim_create_augroup('lsp_document_highlight', {
             clear = false,
           })
-          vim.api.nvim_clear_autocmds {
+          vim.api.nvim_clear_autocmds({
             buffer = bufnr,
             group = 'lsp_document_highlight',
-          }
+          })
           vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
             group = 'lsp_document_highlight',
             buffer = bufnr,
@@ -144,14 +144,14 @@ return {
         'tailwindcss',
       }
       for _, lsp in ipairs(servers) do
-        lspconfig[lsp].setup {
+        lspconfig[lsp].setup({
           on_attach = on_attach,
           capabilities = capabilities,
-        }
+        })
       end
 
       -- lua
-      lspconfig.lua_ls.setup {
+      lspconfig.lua_ls.setup({
         on_attach = on_attach,
         handlers = handlers,
         capabilities = capabilities,
@@ -162,11 +162,11 @@ return {
             },
           },
         },
-      }
+      })
 
       -- vue
       local getServerPath = function(package_name, server_path)
-        local mason_registry = require 'mason-registry'
+        local mason_registry = require('mason-registry')
         return mason_registry.get_package(package_name):get_install_path() .. server_path
       end
 
@@ -174,7 +174,7 @@ return {
       local typescript_language_server_path =
         getServerPath('typescript-language-server', '/node_modules/typescript/lib')
 
-      lspconfig.tsserver.setup {
+      lspconfig.tsserver.setup({
         on_attach = on_attach,
         capabilities = capabilities,
         filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
@@ -187,8 +187,8 @@ return {
             },
           },
         },
-      }
-      lspconfig.volar.setup {
+      })
+      lspconfig.volar.setup({
         on_attach = on_attach,
         capabilities = capabilities,
         init_options = {
@@ -196,7 +196,7 @@ return {
             tsdk = typescript_language_server_path,
           },
         },
-      }
+      })
     end,
   },
 }

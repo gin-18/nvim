@@ -1,3 +1,5 @@
+> :warning: Note: 配置已修改，但是 README 未更新。
+
 # Neovim 配置
 
 <img src="https://github.com/gin-18/pictures/blob/master/readme/nvim/nvim.png?raw=true" alt="nvim" />

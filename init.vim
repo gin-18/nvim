@@ -11,27 +11,6 @@
 
 " -----------------------------------------------------------------
 "                                                                 -
-" auto-command                                                    -
-"                                                                 -
-" -----------------------------------------------------------------
-" 设置重新进入文件时，光标留在上次退出的地方
-augroup back_to_leave
-  autocmd!
-  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-augroup END
-" 解决从telescope打开文件后不能折叠
-augroup fold_after_telescope
-  autocmd!
-  autocmd BufRead * autocmd BufWinEnter * ++once normal! zx
-augroup END
-" 设置ejs的文件类型为html
-augroup fold_after_telescope
-  autocmd!
-  autocmd BufNewFile,BufRead *.ejs set filetype=html
-augroup END
-
-" -----------------------------------------------------------------
-"                                                                 -
 " plugin config for which written in vimscript                    -
 "                                                                 -
 " -----------------------------------------------------------------
@@ -72,5 +51,6 @@ lua << EOF
 require('core.disabled')
 require('core.options')
 require('core.keymaps')
+require('core.autocmds')
 require('core.lazy')
 EOF
