@@ -125,12 +125,20 @@ return {
           vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
             group = 'lsp_document_highlight',
             buffer = bufnr,
-            callback = vim.lsp.buf.document_highlight,
+            callback = function()
+              if vim.bo.filetype ~= 'vue' then
+                vim.lsp.buf.document_highlight()
+              end
+            end,
           })
           vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
             group = 'lsp_document_highlight',
             buffer = bufnr,
-            callback = vim.lsp.buf.clear_references,
+            callback = function()
+              if vim.bo.filetype ~= 'vue' then
+                vim.lsp.buf.clear_references()
+              end
+            end,
           })
         end
       end
@@ -170,8 +178,7 @@ return {
         return mason_registry.get_package(package_name):get_install_path() .. server_path
       end
 
-      local vue_language_server_path =
-        getServerPath('vue-language-server', '/node_modules/@vue/language-server/node_modules')
+      local vue_language_server_path = getServerPath('vue-language-server', '/node_modules/@vue/language-server')
       local typescript_language_server_path =
         getServerPath('typescript-language-server', '/node_modules/typescript/lib')
 
