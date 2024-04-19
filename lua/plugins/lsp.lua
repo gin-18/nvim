@@ -170,7 +170,8 @@ return {
         return mason_registry.get_package(package_name):get_install_path() .. server_path
       end
 
-      local vue_language_server_path = getServerPath('vue-language-server', '/node_modules/@vue/language-server')
+      local vue_language_server_path =
+        getServerPath('vue-language-server', '/node_modules/@vue/language-server/node_modules')
       local typescript_language_server_path =
         getServerPath('typescript-language-server', '/node_modules/typescript/lib')
 
