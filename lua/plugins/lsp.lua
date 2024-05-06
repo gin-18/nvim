@@ -126,18 +126,14 @@ return {
             group = 'lsp_document_highlight',
             buffer = bufnr,
             callback = function()
-              if vim.bo.filetype ~= 'vue' then
-                vim.lsp.buf.document_highlight()
-              end
+              vim.lsp.buf.document_highlight()
             end,
           })
           vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
             group = 'lsp_document_highlight',
             buffer = bufnr,
             callback = function()
-              if vim.bo.filetype ~= 'vue' then
-                vim.lsp.buf.clear_references()
-              end
+              vim.lsp.buf.clear_references()
             end,
           })
         end
