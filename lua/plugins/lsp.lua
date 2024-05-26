@@ -20,15 +20,18 @@ return {
     },
     opts = {
       ensure_installed = {
-        'clangd',
         'vimls',
         'lua_ls',
+        'clangd',
+        'bashls',
         'html',
         'cssls',
         'tsserver',
         'volar',
         'jsonls',
         'tailwindcss',
+        'dockerls',
+        'docker_compose_language_service',
       },
     },
   },
@@ -140,12 +143,15 @@ return {
       end
 
       local servers = {
-        'clangd',
         'vimls',
+        'clangd',
+        'bashls',
         'html',
         'cssls',
         'jsonls',
         'tailwindcss',
+        'dockerls',
+        'docker_compose_language_service',
       }
       for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup({

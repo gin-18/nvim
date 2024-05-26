@@ -20,6 +20,17 @@ vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
   end,
 })
 
+vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
+  group = augroup('set_filetype_of_docker_compose'),
+  pattern = '*.yml',
+  callback = function()
+    local filename = vim.fn.expand('%:t')
+    if filename == 'compose.yml' then
+      vim.bo.filetype = 'yaml.docker-compose'
+    end
+  end,
+})
+
 vim.api.nvim_create_autocmd('FileType', {
   group = augroup('close_with_q'),
   pattern = {

@@ -15,12 +15,11 @@
 "                                                                 -
 " -----------------------------------------------------------------
 " markdown-preview
+let g:mkdp_theme = 'dark'
 let g:mkdp_auto_start = 0
 let g:mkdp_refresh_slow = 1
-let g:mkdp_browser = 'firefox'
 let g:mkdp_markdown_css = expand('~/.config/nvim/static/markdown.css')
 let g:mkdp_highlight_css = expand('~/.config/nvim/static/highlight.css')
-let g:mkdp_theme = 'dark'
 
 " table-mode
 function! s:isAtStartOfLine(mapping)
