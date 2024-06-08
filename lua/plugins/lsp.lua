@@ -87,35 +87,11 @@ return {
         ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' }),
       }
 
-      -- float diagnostic under cursor
-      vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-        group = vim.api.nvim_create_augroup('float_diagnostic', { clear = true }),
-        callback = function()
-          vim.diagnostic.open_float(nil, { focus = false })
-        end,
-      })
-
       -- autocompletion
       local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
       -- on attch
       local on_attach = function(client, bufnr)
-        -- float diagnostic under cursor
-        vim.api.nvim_create_autocmd('CursorHold', {
-          buffer = bufnr,
-          callback = function()
-            local opts = {
-              focusable = false,
-              close_events = { 'BufLeave', 'CursorMoved', 'InsertEnter', 'FocusLost' },
-              border = 'rounded',
-              source = 'always',
-              prefix = ' ',
-              scope = 'cursor',
-            }
-            vim.diagnostic.open_float(nil, opts)
-          end,
-        })
-
         -- highlight symbol under cursor
         if client.server_capabilities.documentHighlightProvider then
           vim.api.nvim_create_augroup('lsp_document_highlight', {
