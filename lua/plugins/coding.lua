@@ -1,4 +1,10 @@
 return {
+  -- ai
+  {
+    'Exafunction/codeium.vim',
+    event = 'BufEnter',
+  },
+
   -- git
   {
     'kdheepak/lazygit.nvim',
