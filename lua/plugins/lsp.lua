@@ -26,7 +26,7 @@ return {
         'bashls',
         'html',
         'cssls',
-        'tsserver',
+        'ts_ls',
         'volar',
         'jsonls',
         'tailwindcss',
@@ -160,7 +160,7 @@ return {
       local typescript_language_server_path =
         getServerPath('typescript-language-server', '/node_modules/typescript/lib')
 
-      lspconfig.tsserver.setup({
+      lspconfig.ts_ls.setup({
         on_attach = on_attach,
         capabilities = capabilities,
         filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },

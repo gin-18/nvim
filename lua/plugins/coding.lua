@@ -57,8 +57,8 @@ return {
     opts = {
       formatters_by_ft = {
         lua = { 'stylua' },
-        javascript = { 'prettierd' },
-        vue = { 'prettierd' },
+        javascript = { 'prettier' },
+        vue = { 'prettier' },
       },
       format_on_save = {
         timeout_ms = 600,

@@ -53,12 +53,6 @@ return {
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-cmdline',
       'onsails/lspkind.nvim',
-      {
-        'Exafunction/codeium.nvim',
-        config = function()
-          require('codeium').setup({})
-        end,
-      },
     },
     config = function()
       local cmp = require('cmp')
@@ -77,7 +71,6 @@ return {
           { name = 'buffer' },
           { name = 'treesitter' },
           { name = 'path' },
-          { name = 'codeium' },
         },
         window = {
           completion = cmp.config.window.bordered(),
@@ -89,7 +82,6 @@ return {
             maxwidth = 50,
             ellipsis_char = '...',
             show_labelDetails = true,
-            symbol_map = { Codeium = '' },
           }),
         },
         mapping = cmp.mapping.preset.insert({
