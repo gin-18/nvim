@@ -93,6 +93,14 @@ return {
         build = 'make',
       },
     },
+    keys = {
+      { '<space>ff', '<cmd>Telescope find_files<cr>', desc = 'Find Files' },
+      { '<space>fg', '<cmd>Telescope git_files<cr>', desc = 'Git Files' },
+      { '<space>fo', '<cmd>Telescope oldfiles<cr>', desc = 'Oldfiles' },
+      { '<space>fb', '<cmd>Telescope buffers<cr>', desc = 'Buffers' },
+      { '<space>fl', '<cmd>Telescope live_grep<cr>', desc = 'Live Grep' },
+      { '<space>fd', '<cmd>Telescope diagnostics<cr>', desc = 'Diagnostics' },
+    },
     config = function()
       require('telescope').setup({
         defaults = {
