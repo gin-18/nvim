@@ -32,6 +32,8 @@ return {
       dashboard.section.header.val = {
         '',
         '',
+        '',
+        '',
         '⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡎⢧',
         '⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣵⣶⣾⡶⠶⠿⠿⠶⠿⠾⠶⠶⠼⢮⣙⠢⠤⣀⡀',
         '⣿⣿⣿⣿⣿⣿⣟⣿⣽⣵⣶⠾⠿⠛⠛⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠓⡲⣦⣀',
@@ -53,7 +55,6 @@ return {
 
       dashboard.section.buttons.val = {
         dashboard.button('n', icons.new_file .. ' New File', '<Cmd>ene <BAR> startinsert<CR>'),
-        dashboard.button('p', icons.search .. ' Search Projects', '<Cmd>Telescope projects<CR>'),
         dashboard.button('e', icons.explorer .. ' NvimTree Explorer', '<Cmd>NvimTreeToggle<CR>'),
         dashboard.button('l', icons.plugin_manager .. ' Lazy Manage', '<Cmd>Lazy<CR>'),
         dashboard.button('s', icons.setting .. ' Setting', '<Cmd>e $MYVIMRC<CR>'),

@@ -88,7 +88,6 @@ return {
     cmd = 'Telescope',
     dependencies = {
       'nvim-lua/plenary.nvim',
-      'ahmedkhalf/project.nvim',
       {
         'nvim-telescope/telescope-fzf-native.nvim',
         build = 'make',
@@ -137,7 +136,6 @@ return {
         },
       })
       require('telescope').load_extension('fzf')
-      require('telescope').load_extension('projects')
     end,
   },
 }
