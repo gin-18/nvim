@@ -8,10 +8,24 @@ return {
   -- git
   {
     'kdheepak/lazygit.nvim',
-    cmd = 'LazyGit',
+    lazy = true,
+    cmd = {
+      'LazyGit',
+      'LazyGitConfig',
+      'LazyGitCurrentFile',
+      'LazyGitFilter',
+      'LazyGitFilterCurrentFile',
+    },
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim',
+    },
     keys = {
       { '<space>gg', '<cmd>LazyGit<cr>', desc = 'LazyGit' },
     },
+    config = function()
+      require('telescope').load_extension('lazygit')
+    end,
   },
   {
     'lewis6991/gitsigns.nvim',
