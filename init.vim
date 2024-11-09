@@ -22,6 +22,9 @@ let g:mkdp_markdown_css = expand('~/.config/nvim/static/markdown.css')
 let g:mkdp_highlight_css = expand('~/.config/nvim/static/highlight.css')
 
 " table-mode
+noremap <M-T> <cmd>TableModeToggle<cr>
+noremap <M-R> <cmd>TableModeRealign<cr>
+
 function! s:isAtStartOfLine(mapping)
   let text_before_cursor = getline('.')[0 : col('.')-1]
   let mapping_pattern = '\V' . escape(a:mapping, '\')
@@ -39,7 +42,7 @@ inoreabbrev <expr> __
 " md-img-paste
 let g:mdip_imgdir = 'images'
 
-autocmd FileType markdown nmap <buffer><silent> <SPACE>pi :call mdip#MarkdownClipboardImage()<CR>
+autocmd FileType markdown nmap <buffer><silent> <space>pi :call mdip#MarkdownClipboardImage()<CR>
 
 " -----------------------------------------------------------------
 "                                                                 -

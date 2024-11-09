@@ -9,10 +9,19 @@ return {
   {
     'kdheepak/lazygit.nvim',
     cmd = 'LazyGit',
+    keys = {
+      { '<space>gg', '<cmd>LazyGit<cr>', desc = 'LazyGit' },
+    },
   },
   {
     'lewis6991/gitsigns.nvim',
     event = 'VeryLazy',
+    keys = {
+      { '<space>hl', '<cmd>Gitsigns preview_hunk<cr>', desc = 'Preview Hunk' },
+      { '<space>hn', '<cmd>Gitsigns next_hunk<cr>', desc = 'Next Hunk' },
+      { '<space>hp', '<cmd>Gitsigns prev_hunk<cr>', desc = 'Prev Hunk' },
+      { '<space>hr', '<cmd>Gitsigns reset_hunk<cr>', desc = 'Reset Hunk' },
+    },
     opts = {
       preview_config = {
         border = 'rounded',
@@ -101,8 +110,8 @@ return {
     'numToStr/Comment.nvim',
     event = 'VeryLazy',
     opts = {
-      toggler = { line = '<SPACE>cc' },
-      opleader = { line = '<SPACE>cc' },
+      toggler = { line = '<space>cc' },
+      opleader = { line = '<space>cc' },
     },
   },
 

@@ -5,6 +5,9 @@ return {
     cmd = 'NvimTreeToggle',
     version = '*',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
+    keys = {
+      { '<space>ee', '<cmd>NvimTreeToggle<cr>', desc = 'Explorer' },
+    },
     config = function()
       local icons = require('plugins.config.icons').diagnostic_icons
 

@@ -20,25 +20,3 @@ keymap('n', '<space>sl', '<cmd>set nosplitright<cr><cmd>vsplit<cr>', opts)
 keymap('n', '<space><space>', '<Esc>/<++><cr><cmd>nohlsearch<cr>c4l', opts)
 keymap('n', '<space>pp', '"+p', opts)
 keymap('v', '<space>yc', '"+y', opts)
-
--- lsp diagnostic
-keymap('n', '<space>dt', vim.diagnostic.open_float, opts)
-keymap('n', '<space>dp', vim.diagnostic.goto_prev, opts)
-keymap('n', '<space>dn', vim.diagnostic.goto_next, opts)
-keymap('n', '<space>dl', vim.diagnostic.setloclist, opts)
-
--- nvim-tree
-keymap('n', '<space>ee', '<cmd>NvimTreeToggle<cr>', opts)
-
--- lazygit
-keymap('n', '<space>gg', '<cmd>LazyGit<cr>', opts)
-
--- gitsigns - hunk
-keymap('n', '<space>hl', '<cmd>Gitsigns preview_hunk<cr>', opts)
-keymap('n', '<space>hn', '<cmd>Gitsigns next_hunk<cr>', opts)
-keymap('n', '<space>hp', '<cmd>Gitsigns prev_hunk<cr>', opts)
-keymap('n', '<space>hr', '<cmd>Gitsigns reset_hunk<cr>', opts)
-
--- table-mode
-keymap('n', '<M-T>', '<cmd>TableModeToggle<cr>', opts)
-keymap('n', '<M-R>', '<cmd>TableModeRealign<cr>', opts)
