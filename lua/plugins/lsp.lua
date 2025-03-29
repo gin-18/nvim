@@ -3,17 +3,29 @@ return {
   {
     'williamboman/mason-lspconfig.nvim',
     dependencies = {
-      'williamboman/mason.nvim',
-      cmd = 'Mason',
-      opts = {
-        ui = {
-          border = 'rounded',
-          width = 0.8,
-          height = 0.7,
-          icons = {
-            package_installed = '󰺧',
-            package_pending = '',
-            package_uninstalled = '󰺭',
+      {
+        'williamboman/mason.nvim',
+        cmd = 'Mason',
+        dependencies = {
+          'WhoIsSethDaniel/mason-tool-installer.nvim',
+          opts = {
+            ensure_installed = {
+              'stylua',
+              'prettier',
+              'eslint_d',
+            },
+          },
+        },
+        opts = {
+          ui = {
+            border = 'rounded',
+            width = 0.8,
+            height = 0.7,
+            icons = {
+              package_installed = '󰺧',
+              package_pending = '',
+              package_uninstalled = '󰺭',
+            },
           },
         },
       },
