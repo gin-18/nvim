@@ -88,20 +88,6 @@ return {
             'encoding',
             'fileformat',
             'filetype',
-            {
-              'vim.fn["codeium#GetStatusString"]()',
-              fmt = function(str)
-                if str == ' ON' then
-                  return '󱃖  |'
-                elseif str == ' OFF' then
-                  return '󰅗  |'
-                elseif str == ' * ' then
-                  return '󰝲  |'
-                else
-                  return str
-                end
-              end,
-            },
           },
         },
       }

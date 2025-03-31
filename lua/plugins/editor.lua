@@ -6,14 +6,14 @@ return {
     version = '*',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     keys = {
-      { '<space>ee', '<cmd>NvimTreeToggle<cr>', desc = 'Explorer' },
+      { '<space>ee', '<cmd>NvimTreeToggle<cr>', desc = 'Toggle Explorer' },
     },
     config = function()
       local icons = require('plugins.config.icons').diagnostic_icons
 
       require('nvim-tree').setup({
         view = {
-          width = 30,
+          width = 40,
           side = 'left',
         },
         renderer = {
@@ -36,8 +36,8 @@ return {
               git = {
                 unstaged = '',
                 staged = '',
-                unmerged = '',
-                renamed = '﯀',
+                unmerged = '',
+                renamed = '',
                 deleted = '',
                 untracked = '󱧈',
                 ignored = '',
