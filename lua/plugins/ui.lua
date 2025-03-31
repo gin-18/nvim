@@ -44,6 +44,10 @@ return {
         '⠀⢀⣰⣦⣭⣿⣷⣤⣔⣣⠀⠱⣗⢬⠙⠻⢿⣿⣿⣿⣿⣿⡟⠁⢰⠏⠉',
         '⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⡀⠈⠡⠐⣠⡶⠦⣭⣙⣛⣉⣠⡴⠏',
         '⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⡀⠀⡏⠀⠀⠀⠈⠉⠉⠉',
+        '',
+        '',
+        '',
+        '',
       }
 
       dashboard.section.buttons.val = {
@@ -55,7 +59,12 @@ return {
       }
 
       local stats = require('lazy').stats()
-      dashboard.section.footer.val = icons.loaded .. ' GIN-Neovim loaded ' .. stats.count .. ' plugins'
+      dashboard.section.footer.val = icons.loaded
+        .. ' GIN-Neovim loaded '
+        .. stats.loaded
+        .. ' / '
+        .. stats.count
+        .. ' plugins'
 
       alpha.setup(dashboard.opts)
 
