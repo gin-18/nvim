@@ -8,11 +8,11 @@ M.diagnostic_icons = {
 }
 
 M.alpha_icons = {
-  new_file = ' ',
+  new_file = ' ',
   explorer = ' ',
   plugin_manager = '󰒲 ',
   setting = ' ',
-  quit = '󰈆 ',
+  quit = ' ',
   loaded = '󱓟 ',
 }
 
