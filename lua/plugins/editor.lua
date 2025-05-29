@@ -36,25 +36,18 @@ return {
               git = {
                 unstaged = '',
                 staged = '',
-                unmerged = '',
+                unmerged = '󰽜',
                 renamed = '',
                 deleted = '',
                 untracked = '󱧈',
-                ignored = '',
-              },
-              folder = {
-                default = '',
-                open = '',
-                empty = '',
-                empty_open = '',
-                symlink = '',
+                ignored = '',
               },
             },
           },
         },
         diagnostics = {
           enable = true,
-          show_on_dirs = true,
+          show_on_dirs = false,
           icons = {
             error = icons.error,
             warning = icons.warn,
@@ -65,20 +58,9 @@ return {
         actions = {
           change_dir = {
             enable = true,
-            global = false,
-            restrict_above_cwd = false,
           },
           open_file = {
             quit_on_open = true,
-            resize_window = true,
-            window_picker = {
-              enable = true,
-              chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890',
-              exclude = {
-                filetype = { 'notify', 'packer', 'qf', 'diff', 'fugitive', 'fugitiveblame' },
-                buftype = { 'nofile', 'terminal', 'help' },
-              },
-            },
           },
         },
       })
@@ -108,7 +90,7 @@ return {
       require('telescope').setup({
         defaults = {
           prompt_prefix = ' ',
-          selection_caret = ' ',
+          selection_caret = ' ',
           layout_stratgy = 'center',
           layout_config = {
             width = 0.8,
