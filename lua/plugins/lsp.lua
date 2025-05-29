@@ -39,7 +39,7 @@ return {
         'html',
         'cssls',
         'ts_ls',
-        'volar',
+        'vue_ls',
         'jsonls',
         'tailwindcss',
         'dockerls',
@@ -168,14 +168,10 @@ return {
       })
 
       -- vue
-      local getServerPath = function(package_name, server_path)
-        local mason_registry = require('mason-registry')
-        return mason_registry.get_package(package_name):get_install_path() .. server_path
-      end
-
-      local vue_language_server_path = getServerPath('vue-language-server', '/node_modules/@vue/language-server')
+      local vue_language_server_path =
+        vim.fn.expand('$MASON/packages/vue-language-server/node_modules/@vue/language-server')
       local typescript_language_server_path =
-        getServerPath('typescript-language-server', '/node_modules/typescript/lib')
+        vim.fn.expand('$MASON/packages/typescript-language-server/node_modules/typescript/lib')
 
       lspconfig.ts_ls.setup({
         on_attach = on_attach,
