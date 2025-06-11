@@ -1,70 +1,30 @@
 return {
   -- explorer
   {
-    'nvim-tree/nvim-tree.lua',
-    cmd = 'NvimTreeToggle',
-    version = '*',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    keys = {
-      { '<space>ee', '<cmd>NvimTreeToggle<cr>', desc = 'Toggle Explorer' },
+    'mikavilpas/yazi.nvim',
+    event = 'VeryLazy',
+    dependencies = {
+      'folke/snacks.nvim',
     },
-    config = function()
-      local icons = require('plugins.config.icons').diagnostic_icons
-
-      require('nvim-tree').setup({
-        view = {
-          width = 40,
-          side = 'left',
-        },
-        renderer = {
-          indent_markers = {
-            enable = true,
-            icons = {
-              corner = '└',
-              edge = '│',
-              item = '│',
-              bottom = '─',
-              none = ' ',
-            },
-          },
-          icons = {
-            webdev_colors = true,
-            git_placement = 'before',
-            glyphs = {
-              default = '',
-              symlink = '',
-              git = {
-                unstaged = '',
-                staged = '',
-                unmerged = '󰽜',
-                renamed = '',
-                deleted = '',
-                untracked = '󱧈',
-                ignored = '',
-              },
-            },
-          },
-        },
-        diagnostics = {
-          enable = true,
-          show_on_dirs = false,
-          icons = {
-            error = icons.error,
-            warning = icons.warn,
-            hint = icons.hint,
-            info = icons.info,
-          },
-        },
-        actions = {
-          change_dir = {
-            enable = true,
-          },
-          open_file = {
-            quit_on_open = true,
-          },
-        },
-      })
-    end,
+    keys = {
+      {
+        '<space>ya',
+        mode = { 'n', 'v' },
+        '<cmd>Yazi<cr>',
+        desc = 'Open yazi at the current file',
+      },
+      {
+        '<space>yd',
+        '<cmd>Yazi cwd<cr>',
+        desc = "Open the file manager in nvim's working directory",
+      },
+    },
+    opts = {
+      open_for_directories = false,
+      keymaps = {
+        show_help = '<f1>',
+      },
+    },
   },
 
   -- file finder
