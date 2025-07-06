@@ -7,10 +7,18 @@ return {
     init = function()
       vim.cmd.colorscheme('catppuccin')
     end,
-    opts = {
-      flavour = 'mocha',
-      no_italic = true,
-    },
+    config = function()
+      require('catppuccin').setup({
+        flavour = 'mocha',
+        no_italic = true,
+        custom_highlights = function(colors)
+          return {
+            NormalFloat = { bg = colors.base },
+            Pmenu = { bg = colors.base },
+          }
+        end,
+      })
+    end,
   },
 
   -- alpha
