@@ -20,7 +20,7 @@ return {
     config = function()
       local alpha = require('alpha')
       local dashboard = require('alpha.themes.dashboard')
-      local icons = require('plugins.config.icons').alpha_icons
+      local icons = require('config.icons').alpha_icons
 
       dashboard.section.header.val = {
         '',
@@ -78,7 +78,7 @@ return {
     event = 'VeryLazy',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = function()
-      local icons = require('plugins.config.icons').diagnostic_icons
+      local icons = require('config.icons').diagnostic_icons
       return {
         options = {
           component_separators = { right = '|' },
