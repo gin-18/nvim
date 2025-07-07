@@ -222,6 +222,14 @@ return {
   },
   {
     'j-hui/fidget.nvim',
-    opts = {},
+    opts = {
+      notification = {
+        window = {
+          normal_hl = 'NormalFloat',
+          winblend = 0,
+          border = 'rounded',
+        },
+      },
+    },
   },
 }
