@@ -147,6 +147,32 @@ return {
     end,
   },
 
+  -- linting
+  -- {
+  --   'mfussenegger/nvim-lint',
+  --   event = {
+  --     'BufReadPre',
+  --     'BufNewFile',
+  --   },
+  --   opts = {
+  --     linters_by_ft = {
+  --       javascript = { 'eslint_d' },
+  --       typescript = { 'eslint_d' },
+  --       vue = { 'eslint_d' },
+  --     },
+  --   },
+  --   config = function()
+  --     local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
+  --
+  --     vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePost', 'InsertLeave' }, {
+  --       group = lint_augroup,
+  --       callback = function()
+  --         pcall(require, 'lint.try_lint')
+  --       end,
+  --     })
+  --   end,
+  -- },
+
   -- formatting
   {
     'stevearc/conform.nvim',
@@ -228,6 +254,8 @@ return {
           normal_hl = 'NormalFloat',
           winblend = 0,
           border = 'rounded',
+          x_padding = 0,
+          y_padding = 0,
         },
       },
     },
