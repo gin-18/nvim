@@ -15,6 +15,7 @@ return {
           return {
             NormalFloat = { bg = colors.base },
             Pmenu = { bg = colors.base },
+            MasonBackdrop = { bg = colors.base },
           }
         end,
       })
