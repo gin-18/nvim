@@ -38,10 +38,17 @@ return {
     },
     opts = {
       ensure_installed = {
-        'vimls',
+        'clangd',
+        'dockerls',
+        'bashls',
         'lua_ls',
+        'html',
+        'cssls',
+        'tailwindcss',
         'vtsls',
         'vue_ls',
+        'jsonls',
+        'marksman',
       },
     },
   },
