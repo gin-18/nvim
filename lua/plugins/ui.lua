@@ -13,9 +13,11 @@ return {
         no_italic = true,
         custom_highlights = function(colors)
           return {
+            FloatBorder = { bg = colors.base },
             NormalFloat = { bg = colors.base },
             Pmenu = { bg = colors.base },
             MasonBackdrop = { bg = colors.base },
+            TelescopeTitle = { bg = colors.base },
           }
         end,
       })
