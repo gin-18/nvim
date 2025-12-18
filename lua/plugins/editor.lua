@@ -1,11 +1,22 @@
 return {
+  {
+    'folke/snacks.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {
+      image = {
+        doc = {
+          inline = false,
+        },
+      },
+      indent = {},
+    },
+  },
+
   -- explorer
   {
     'mikavilpas/yazi.nvim',
     event = 'VeryLazy',
-    dependencies = {
-      'folke/snacks.nvim',
-    },
     keys = {
       {
         '<space>ya',
