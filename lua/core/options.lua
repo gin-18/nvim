@@ -37,8 +37,6 @@ opt.timeoutlen = 500
 
 -- folding
 opt.foldenable = false
-opt.foldmethod = 'expr'
-opt.foldexpr = 'nvim_treesitter#foldexpr()'
 opt.foldlevel = 99
 
 -- list char

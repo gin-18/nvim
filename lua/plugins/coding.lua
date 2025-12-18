@@ -127,12 +127,12 @@ return {
   -- treesitter
   {
     'nvim-treesitter/nvim-treesitter',
+    lazy = false,
+    branch = 'main',
     build = ':TSUpdate',
-    event = 'VeryLazy',
-    opts = {
-      highlight = { enable = true },
-      indent = { enable = true },
-      ensure_installed = {
+    config = function()
+      local ts = require('nvim-treesitter')
+      local parsers = {
         'vim',
         'lua',
         'c',
@@ -144,13 +144,26 @@ return {
         'vue',
         'dockerfile',
         'json',
+        'json5',
         'toml',
         'yaml',
         'markdown',
-      },
-    },
-    config = function(_, opts)
-      require('nvim-treesitter.configs').setup(opts)
+      }
+
+      for _, parser in ipairs(parsers) do
+        pcall(ts.install, parser)
+      end
+
+      vim.api.nvim_create_autocmd('FileType', {
+        callback = function()
+          pcall(vim.treesitter.start)
+
+          vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+          vim.wo[0][0].foldmethod = 'expr'
+
+          vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end,
+      })
     end,
   },
 
